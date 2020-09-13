@@ -44,7 +44,7 @@ module.exports = {
 			PurgeInfo.addField('**Cooldowns: **', '`5 secs`', false);
 			PurgeInfo.addField('**Description:**', 'Deletes the amout of messages specified.', false);
 			PurgeInfo.addField('**Aliases: **', '`p`', false);
-			PurgeInfo.addField('**Usage:**', 'Purge <amount (between 1 and 99)>', false);
+			PurgeInfo.addField('**Usage:**', '`Purge <amount (between 1 and 99)>`', false);
 			PurgeInfo.addField('**Permission Level:** ', 'staff', false);
 			PurgeInfo.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
 			PurgeInfo.setColor(0x2abbf5);
@@ -66,14 +66,30 @@ module.exports = {
 	
 			message.channel.send(RolesInfo);
 		}
+		else if (args[0] === 'UserInfo')
+		{
+			const UserInfoCmd = new Discord.MessageEmbed();
+			UserInfoCmd.setTitle('Information on the UserInfo command.');
+			UserInfoCmd.addField('**Command:** ', '`UserInfo`', false);
+			UserInfoCmd.addField('**Cooldowns: **', '`5 secs`', false);
+			UserInfoCmd.addField('**Description:**', 'Shows the information of the current user or other mentioned users.', false);
+			UserInfoCmd.addField('**Aliases: **', '`ui`, `ui`, `useri`, `uinfo`, `Whois`', false);
+			UserInfoCmd.addField('**Usage:**', '`UserInfo <mentioned user>`', false);
+			UserInfoCmd.addField('**Permission Level:** ', 'user', false);
+			UserInfoCmd.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
+			UserInfoCmd.setColor(0x2abbf5);
+	
+			message.channel.send(UserInfoCmd);
+		}
         else if(!args.lenght)
 		{
 			const Help = new Discord.MessageEmbed();
 			Help.setTitle('Help Command');
 			Help.addField('If you want more information on a command: ', ' do `help <command name>`', false);
-			Help.addField('**Info Commands:** ', '`ServerInfo`', false);
-			Help.addField('**Roll Commands: **', "`Roles`", false);
-			Help.addField('**Other Commands: **', '`Purge`, `Ping`', false);
+			Help.addField('**Info Commands:** ', '`ServerInfo`, `UserInfo`', false);
+			Help.addField('**User Commands: **', "`Roles`", false);
+			Help.addField('**Bot Commands: **', "`Ping`", false);
+			Help.addField('**Mod Commands: **', '`Purge`', `UserInfo`, false);
 			Help.setFooter('Hint: alias for help is "h" !');
 			Help.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
 			Help.setColor(0x2abbf5);
