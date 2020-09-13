@@ -1,0 +1,16 @@
+{
+  "name": "cent-dev-utilities",
+  "version": "1.0.0",
+  "description": "A Utility bot for our discod",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "YT GAMEWORKS",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "eslint": "^7.8.1"
+  }
+}
