@@ -1,12 +1,13 @@
 module.exports = {
 	name: 'roles',
-	cooldown: 20,
+	cooldown: 10,
 	aliases: ['r', 'role'],
     description: 'Rank command to display and assign ranks.',
-    execute(message, args) 
+    execute(client ,message, args) 
     {
         const Discord = require('discord.js');
 
+        //#region Giving roles on input
         if(args[0] === 'gamedev' || args[0] === 'GameDev' || args[0] === 'Gamedev')
         {
             //Finding the role
@@ -159,6 +160,9 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
+        //#endregion
+
+        //#region normal roles
         else if(!args.lenght)
         {
             const availableRanks = new Discord.MessageEmbed();
@@ -167,7 +171,7 @@ module.exports = {
             availableRanks.addField('Role 1\n**GameDev**', 'Get access to gamedev-only text and voice channels!', false);
             availableRanks.addField('Role 2\n**Artist**', 'Get access to artist-only text and voice channels', false);
             availableRanks.addField('Role 3\n**Gamer**', 'Get access to gamer-only text and voice channels!', false);
-            availableRanks.addField('Role 4\n**Sound Designers**', 'Get access to gamer-only text and voice channels!\n**NOTE:** to get this role you must type `!roles SFX` or `!roles sound`.', false);
+            availableRanks.addField('Role 4\n**Sound Designers**', 'Get access to Sound Designers-only text and voice chat !\n**NOTE:** to get this role you must type `!roles SFX` or `!roles sound`.', false);
             availableRanks.addField('Role 5\n**Bot Helper**', 'Get access to bot-helper-only text and voice channels\n**NOTE:** to get this role you must type `!roles Bot-Helper` or `!roles Bot`.', false);
             availableRanks.addField('Role 6\n**Playtester**', 'Be the first one to review and play our games!', false);
             availableRanks.addField('Role 7\n**Giveaway notifications**', 'You will be notified when we host a giveaway!\n**NOTE:** to get this role you must type `!roles Giveaway-Notifs`.', false);
@@ -177,5 +181,6 @@ module.exports = {
     
             message.channel.send(availableRanks);
         }
+        //#endregion
     }
 }

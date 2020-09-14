@@ -2,7 +2,7 @@ module.exports = {
 	name: 'ping',
 	cooldown: 2,
 	description: 'A ping command, that displays the ping of the bot.',
-    execute(message, args) 
+    execute(client ,message, args) 
     {
         const Discord = require('discord.js');
     

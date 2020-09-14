@@ -2,7 +2,7 @@ module.exports = {
 	name: 'serverinfo',
 	aliases: ['si', 'serveri', 'sinfo'],
 	description: 'Information about the current server.',
-    execute(message, args) 
+    execute(client ,message, args) 
     {
 		const Discord = require('discord.js');
 
@@ -11,6 +11,7 @@ module.exports = {
 		ServerInfo.addField('`Server Owner:` ', `**${message.guild.owner}**`, true);
 		ServerInfo.addField('`Server name:` ', `**${message.guild.name}**`, true);
 		ServerInfo.addField('`Total Members:` ', `**${message.guild.memberCount}**`, true);
+		ServerInfo.addField('`Total Channels:` ', `**${message.guild.channels.cache.size}**`, true);
 		ServerInfo.addField('`Creation date:` ', `**${message.guild.createdAt}**`, false);
 		ServerInfo.addField('`Creation Region:` ', `**${message.guild.region}**`);
 		ServerInfo.setThumbnail('https://media.discordapp.net/attachments/727420256917782602/754271858760613888/unknown.png');

@@ -2,7 +2,7 @@ module.exports = {
 	name: 'help',
 	description: 'A help command, that tells the user ALL the commads available in one embed.',
 	aliases: ['info', 'h'],
-    execute(message, args) 
+    execute(client ,message, args) 
     {
         const Discord = require('discord.js');
 

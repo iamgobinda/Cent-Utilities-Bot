@@ -3,7 +3,7 @@ module.exports = {
 	cooldown: 5,
 	aliases: ['p'],
 	description: 'Purge Command, that deletes sepcified messages.',
-    execute(message, args) 
+    execute(client ,message, args) 
     {
 		const Discord = require('discord.js');
 
