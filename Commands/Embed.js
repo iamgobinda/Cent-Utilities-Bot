@@ -13,8 +13,8 @@ module.exports = {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
 			const Error = new Discord.MessageEmbed();
-			Error.setTitle('ERROR !');
-			Error.setDescription('Only Staff can send embeds !');
+			Error.setTitle('ERROR!');
+			Error.setDescription('Only Staff can send embeds!');
 			Error.setColor(0xf53d3d);
 
 			message.channel.send(Error);
@@ -34,7 +34,7 @@ module.exports = {
             catch
             {
                 const Error = new Discord.MessageEmbed();
-                Error.setTitle('Syntax Error !');
+                Error.setTitle('Syntax Error!');
                 Error.setDescription('Usage: `<channel> <annoucement>`');
                 Error.setColor(0xf53d3d);
     
