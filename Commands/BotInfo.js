@@ -3,7 +3,7 @@ module.exports = {
     coolDown: 1,
 	description: 'A user Info command that shows the info about a user.',
 	aliases: ['bi', 'boti', 'binfo'],
-    execute(client , message, args) 
+    async execute(client , message, args) 
     {
         const Discord = require('discord.js');
         message.channel.send("Pinging...").then(m =>{

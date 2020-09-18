@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 // Reading info form the config.json file.
-const { prefix, PatchNumber, BuildNumber } = require('./config/config.json');
+const {prefix, PatchNumber, BuildNumber } = require('./config/config.json');
 // Create a new Discord Client.
 const client = new Discord.Client();
 
@@ -13,7 +13,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) 
+for (const file of commandFiles)
 {
 	const command = require(`./Commands/${file}`);
 
@@ -27,11 +27,18 @@ const cooldowns = new Discord.Collection();
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
-	client.user.setActivity('Commands | !help', { type: 'LISTENING' });
+	client.user.setPresence({
+		status: 'online',
+		activity: {
+			name: '!help',
+			type: 'STREAMING',
+			url: 'https://www.twitch.tv/monstercat'
+		}
+	})
 	console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber);
 });
 
-// Triggred when user sends a message or we can check for a specific 
+// Triggred when user sends a message or we can check for a specific
 // message here.
 client.on('message', message => {
 
@@ -44,21 +51,21 @@ client.on('message', message => {
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
 	if (!command) return;
-	
-	if (!cooldowns.has(command.name)) 
+
+	if (!cooldowns.has(command.name))
 	{
 		cooldowns.set(command.name, new Discord.Collection());
 	}
-	
+
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
 	const cooldownAmount = (command.cooldown || 3) * 1000;
-	
-	if (timestamps.has(message.author.id)) 
+
+	if (timestamps.has(message.author.id))
 	{
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 
-		if (now < expirationTime) 
+		if (now < expirationTime)
 		{
 			const timeLeft = (expirationTime - now) / 1000;
 			return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
@@ -68,11 +75,11 @@ client.on('message', message => {
 	timestamps.set(message.author.id, now);
 	setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
-	try 
+	try
 	{
 		command.execute(client, message, args);
-	} 
-	catch (error) 
+	}
+	catch (error)
 	{
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');

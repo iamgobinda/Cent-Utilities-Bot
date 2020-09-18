@@ -3,7 +3,7 @@ module.exports = {
     coolDown: 5,
 	description: 'A user Info command that shows the info about a user.',
 	aliases: ['ui', 'useri', 'uinfo', 'whois'],
-    execute(client ,message, args) 
+    async execute(client ,message, args) 
     {
         const Discord = require('discord.js');
 

@@ -1,8 +1,8 @@
 module.exports = {
 	name: 'roleinfo',
-	aliases: ['ri', 'serveri', 'sinfo'],
-	description: 'Information about the current server.',
-    execute(client ,message, args) 
+	aliases: ['ri', 'rolei', 'rinfo'],
+	description: 'Information about individual roless.',
+    async execute(client ,message, args) 
     {
         const Discord = require('discord.js');
 

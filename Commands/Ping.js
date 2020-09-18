@@ -1,23 +1,28 @@
+const Discord = require("discord.js");
+const { execute } = require("./poll");
+
 module.exports = {
-	name: 'ping',
-	cooldown: 2,
-	description: 'A ping command, that displays the ping of the bot.',
-    execute(client ,message, args) 
-    {
-        const Discord = require('discord.js');
-    
-		// It sends the user "Pinging"
-		message.channel.send("Pinging...").then(m =>{
-		// The math thingy to calculate the user's ping
-		var ping = m.createdTimestamp - message.createdTimestamp;
-			  
-		// Basic embed
-		var embed = new Discord.MessageEmbed()
-		.setAuthor(`🏓 | The bot's ping is ${ping}ms`)
-		.setColor(0x2abbf5)
-						  
-		// Then It Edits the message with the ping variable embed that you created
-		m.edit(embed);
-		});
-	},
+  name: "ping",
+  description: "Returns latency and API ping",
+  coolDown: 10,
+	async execute(bot, message, args)
+	{
+    message.channel.send(`🏓 Pinging....`).then((msg) => {
+      const _ = new Discord.MessageEmbed()
+        .setTitle("Pong!")
+        .setDescription(
+          `:ping_pong: Pong!\nEvaluation time is ${getRndInteger(0, 2)}ms\nLatency is ${Math.floor(
+            msg.createdTimestamp - message.createdTimestamp
+          )}ms\nAPI Latency is ${Math.round(bot.ws.ping)}ms`
+        )
+        .setColor(0xf53d3d);
+      msg.edit(_);
+      msg.edit("\u200B");
+    });
+  },
 };
+
+function getRndInteger(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}

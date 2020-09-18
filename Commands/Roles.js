@@ -3,7 +3,7 @@ module.exports = {
 	cooldown: 10,
 	aliases: ['r', 'role'],
     description: 'Rank command to display and assign ranks.',
-    execute(client ,message, args) 
+    async execute(client ,message, args) 
     {
         const Discord = require('discord.js');
 
