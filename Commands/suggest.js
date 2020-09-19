@@ -1,12 +1,11 @@
-const { MessageEmbed } = require("discord.js")
-
+const Discord = require("discord.js");
+const { execute } = require("./suggest");
 
 module.exports = {
   name: "suggest",
-  usage: "suggest <message>",
-  description: "Send your Suggestion to a suggestion channel!",
-  category: "User",
-  execute: async  (client, message, args) => {
+  description: "Suggest a thing!",
+  coolDown: 10,
+	async execute(bot, message, args) => {
     
     if(!args.length) {
       return message.channel.send("Please Give the Suggestion")
