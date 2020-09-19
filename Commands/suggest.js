@@ -5,7 +5,7 @@ module.exports = {
   name: "suggest",
   description: "Suggest a thing!",
   coolDown: 10,
-    async execute(bot, message, args)  {
+    async execute(client, message, args)  {
     
     if(!args.length) {
       return message.channel.send("Please Give the Suggestion")
