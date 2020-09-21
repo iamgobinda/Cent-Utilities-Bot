@@ -11,7 +11,7 @@ module.exports = {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
 			const Error = new Discord.MessageEmbed();
-			Error.setTitle('ERROR !');
+			Error.setTitle('ERROR!');
 			Error.setDescription('Only Staff can do polls!');
 			Error.setColor(0xf53d3d);
 
@@ -25,7 +25,7 @@ module.exports = {
             try
             {
                 let embedPoll = new Discord.MessageEmbed();
-                embedPoll.setTitle('**NEW POLL: **');
+                embedPoll.setTitle('** 🚥 NEW POLL: **');
                 embedPoll.setDescription(pollDescription);
                 embedPoll.setColor(0x2abbf5);
         
@@ -36,7 +36,7 @@ module.exports = {
             catch
             {
                 const Error = new Discord.MessageEmbed();
-                Error.setTitle('Syntax Error !');
+                Error.setTitle(' <:redtick:750751681175748608> Syntax Error!');
                 Error.setDescription('Usage: `<channel> <msg>`');
                 Error.setColor(0xf53d3d);
     
