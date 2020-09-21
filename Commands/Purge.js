@@ -1,6 +1,6 @@
 module.exports = {
     name: 'purge',
-    cooldown: 5,
+    cooldown: 2,
     aliases: ['p'],
     description: 'Purge Command, that deletes sepcified messages.',
     async execute(client, message, args) {
