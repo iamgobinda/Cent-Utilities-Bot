@@ -6,6 +6,9 @@ module.exports = {
     coolDown: 10,
     async execute(client, message, args)
     {
+    
+        const alphabets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'z'];
+
 
     if(!args.length) 
     {
@@ -27,14 +30,16 @@ module.exports = {
 
         return message.channel.send(Error);
     }
-                                                    
     
+    const id = getRndInteger(0, 25);
+
     const embed = new Discord.MessageEmbed();
     embed.setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL());
     embed.setThumbnail(message.author.avatarURL());
     embed.setColor(0x2abbf5);
     embed.setDescription(args.join(" "));
     embed.setTimestamp();
+    embed.setFooter(`${id}${alphabets[id]}${id}${alphabets[id]}${id}${id}${alphabets[id]}`);
     
     
     channel.send(embed).then(m => {
@@ -46,4 +51,9 @@ module.exports = {
     message.channel.send("Sent Your Suggestion to " + `${channel}`);
     
   }
- }   
+ };
+
+function getRndInteger(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
