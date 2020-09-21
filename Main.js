@@ -26,22 +26,16 @@ for (const file of commandFiles)
 const cooldowns = new Discord.Collection();
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
-
-
-
-const activities_list = [
-    "with the !help command.", 
-    "with the developers console",
-    "with some code", 
-    "with JavaScript"
-    ]; // creates an arraylist containing phrases you want your bot to switch through.
-
-client.on('ready', () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-        bot.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
-    }, 10000); 
-console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber); // Runs this every 10 seconds.
+client.once('ready', () => {
+	client.user.setPresence({
+		status: 'online',
+		activity: {
+			name: '!help',
+			type: 'STREAMING',
+			url: 'https://www.twitch.tv/monstercat'
+		}
+	})
+	console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber);
 });
 
 // Triggred when user sends a message or we can check for a specific
