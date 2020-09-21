@@ -10,7 +10,7 @@ module.exports = {
         const randomChoice = getRndInteger(0, 6);
             
             const success = new Discord.MessageEmbed();
-            success.setTitle('**THE 8BALL HAS ANSWERED: **');
+            success.setTitle('**<:greentick:750751680613843105> THE 8BALL HAS ANSWERED: **');
             success.setDescription('`Answer is:` ' + `${Posiblities[randomChoice]}`);
             success.setColor(0x32ba4b);
     
