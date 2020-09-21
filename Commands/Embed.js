@@ -37,7 +37,7 @@ module.exports = {
             catch
             {
                 const Error = new Discord.MessageEmbed();
-                Error.setTitle('Syntax Error!');
+                Error.setTitle('<:redtick:750751681175748608>Syntax Error!');
                 Error.setDescription('Usage: `<channel> <annoucement>`');
                 Error.setColor(0xf53d3d);
     
