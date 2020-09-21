@@ -13,7 +13,7 @@ module.exports = {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
 			const Error = new Discord.MessageEmbed();
-			Error.setTitle('<:redtick:750751681175748608>ERROR!');
+			Error.setTitle('<:redtick:750751681175748608> ERROR!');
 			Error.setDescription('Only Staff can send embeds!');
 			Error.setColor(0xf53d3d);
 
@@ -37,7 +37,7 @@ module.exports = {
             catch
             {
                 const Error = new Discord.MessageEmbed();
-                Error.setTitle('<:redtick:750751681175748608>Syntax Error!');
+                Error.setTitle('<:redtick:750751681175748608> Syntax Error!');
                 Error.setDescription('Usage: `<channel> <annoucement>`');
                 Error.setColor(0xf53d3d);
     
