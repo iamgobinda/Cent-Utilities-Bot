@@ -30,6 +30,7 @@ module.exports = {
                 embed.setTitle('**ANNOUCEMENT**');
                 embed.setDescription(announcement);
                 embed.setColor('RANDOM');
+                embed.setFooter(`${message.createdAt}`);
         
                 channel.send(embed);
             }
