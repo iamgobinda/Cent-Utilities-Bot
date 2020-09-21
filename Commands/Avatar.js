@@ -8,7 +8,7 @@ module.exports = {
     async execute(client ,message, args)
     {
         const embed = new Discord.MessageEmbed();
-        embed.setTitle('Your avatar!');
+        embed.setTitle('<:greentick:750751680613843105> Your avatar!');
         embed.setImage(message.author.displayAvatarURL());
         embed.setColor(0x2abbf5);
     
