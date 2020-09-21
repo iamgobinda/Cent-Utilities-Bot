@@ -16,8 +16,8 @@ module.exports = {
             embed.setDescription(suggestion);
 
             channel.send(embed).then(m => {
-                await m.react("✅");
-                await m.react("❌");
+                m.react("✅");
+                m.react("❌");
             })
         }
         catch
