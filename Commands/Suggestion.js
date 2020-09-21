@@ -8,7 +8,8 @@ module.exports = {
         if (!args.length) {
             const Error = new Discord.MessageEmbed();
             Error.setTitle('<:redtick:750751681175748608> Syntax Error!');
-            Error.setDescription('Usage - `!suggest <suggestion>');
+            Error.setColor(0xf53d3d);
+            Error.setDescription('Usage - `!suggest <suggestion>`');
 
             return message.channel.send(Error);
         }
