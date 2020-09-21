@@ -1,4 +1,4 @@
-onst Discord = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = {
     name: "suggest",
@@ -9,6 +9,9 @@ module.exports = {
 
     if(!args.length) 
     {
+        const Error = new Discord.MessageEmbed();
+        Error.setTitle('Syntax Error !')
+
         return message.channel.send("Please Give the Suggestion");
     }
     
@@ -17,14 +20,19 @@ module.exports = {
     
     if(!channel) 
     {
-      return message.channel.send("there is no channel with name - suggestions");
+        const Error = new Discord.MessageEmbed();
+        Error.setTitle('Error !');
+        Error.setDescription('there is no channel with name - suggestions');
+        Error.setColor(0xf53d3d);
+
+        return message.channel.send(Error);
     }
                                                     
     
     const embed = new Discord.MessageEmbed();
     embed.setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL());
     embed.setThumbnail(message.author.avatarURL());
-    embed.setColor("#ff2050");
+    embed.setColor(0x2abbf5);
     embed.setDescription(args.join(" "));
     embed.setTimestamp();
     
@@ -35,7 +43,7 @@ module.exports = {
     })
     
     
-    message.channel.send("Sent Your Suggestion to " + channel);
+    message.channel.send("Sent Your Suggestion to " + `${channel}`);
     
   }
  }   
