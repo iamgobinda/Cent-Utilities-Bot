@@ -11,8 +11,8 @@ module.exports = {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
 			const Error = new Discord.MessageEmbed();
-			Error.setTitle('ERROR !');
-			Error.setDescription('Only Staff can bring up rules !');
+			Error.setTitle('<:redtick:750751681175748608> ERROR!');
+			Error.setDescription('Only Staff can bring up rules!');
 			Error.setColor(0xf53d3d);
 
 			message.channel.send(Error);
