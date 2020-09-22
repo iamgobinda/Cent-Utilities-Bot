@@ -2,6 +2,7 @@
 const Discord = require('discord.js');
 //REauire fs module.
 const fs = require('fs');
+const { coolDown } = require('./Commands/UserInfo');
 
 // Reading info form the config.json file.
 const {prefix, PatchNumber, BuildNumber } = require('./config/config.json');
@@ -44,7 +45,7 @@ client.on('guildMemberAdd', member => {
 
 	const Welcomevent = new Discord.MessageEmbed();
 	Welcomevent.setColor(`RANDOM`);
-	Welcomevent.setAuthor(member.user.username , member.user.displayAvatarURL());
+	Welcomevent.setAuthor(message.author.tag , member.user.displayAvatarURL());
 	Welcomevent.setThumbnail(member.user.displayAvatarURL());
 	Welcomevent.setTitle('<:blobnitro:750751853473693758> Hello!');
 	Welcomevent.setDescription('Welcome bud! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
@@ -85,7 +86,11 @@ client.on('message', message => {
 		if (now < expirationTime)
 		{
 			const timeLeft = (expirationTime - now) / 1000;
-			return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+			const Cooldownembed = new Discord.MessageEmbed();
+			Cooldownembed.setColor(0xf53d3d)
+			Cooldownembed.setTitle('Be A normie Common!');
+			Cooldownembed.setDescription(`If you spam my commands I will die soon! You can use the command \`${command.name}\` again in ${timeLeft.toFixed(1)}!`)
+			return message.reply(Cooldownembed);
 		}
 	}
 
