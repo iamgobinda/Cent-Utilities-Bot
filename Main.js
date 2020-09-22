@@ -44,8 +44,10 @@ client.on('guildMemberAdd', member => {
 
 	const Welcomevent = new Discord.MessageEmbed();
 	Welcomevent.setColor(`RANDOM`);
+	Welcomevent.setAuthor(member.user.username);
+	Welcomevent.setThumbnail(member.user.displayAvatarURL());
 	Welcomevent.setTitle('<:blobnitro:750751853473693758> Hello!');
-	Welcomevent.setDescription('Welcome ${member}! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
+	Welcomevent.setDescription('Welcome bud! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
 
 	channel.send(Welcomevent);
 });
