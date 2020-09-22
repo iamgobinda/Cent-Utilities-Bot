@@ -65,7 +65,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'SFX' || args[0] === 'Sound' || args[0] === 'Sound and SFX Designer')
+        else if(args[0] === 'SFX' || args[0] === 'Sound Designers' || args[0] === 'Sound and SFX Designer')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Sound and SFX Designer");
@@ -122,7 +122,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Giveaway Notifications')
+        else if(args[0] === 'Giveaway notifications')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Giveaway Notifications");
@@ -141,7 +141,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Youtube Notifications')
+        else if(args[0] === 'Youtube notifications')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Youtube Notifications");
