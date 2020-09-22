@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'roles',
-	cooldown: 10,
+	cooldown: 5,
 	aliases: ['r', 'role'],
     description: 'Rank command to display and assign ranks.',
     async execute(client ,message, args) 
@@ -122,7 +122,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Giveaway notifications')
+        else if(args[0] === 'Giveaway')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Giveaway Notifications");
@@ -141,7 +141,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Youtube notifications')
+        else if(args[0] === 'Youtube')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Youtube Notifications");
@@ -175,8 +175,8 @@ module.exports = {
             availableRanks.addField('Role 4\n**Sound Designers**', 'Get access to Sound Designers-only text and voice chat !', false);
             availableRanks.addField('Role 5\n**Bot Helper**', 'Get access to bot-helper-only text and voice channels!', false);
             availableRanks.addField('Role 6\n**Playtester**', 'Be the first one to review and play our games!', false);
-            availableRanks.addField('Role 7\n**Giveaway notifications**', 'You will be notified when we host a giveaway!', false);
-            availableRanks.addField('Role 8\n**Youtube notifications**', 'You will be notified when we upload a new video!', false);
+            availableRanks.addField('Role 7\n**Giveaway**', 'You will be notified when we host a giveaway!', false);
+            availableRanks.addField('Role 8\n**Youtube**', 'You will be notified when we upload a new video!', false);
             availableRanks.setColor(0x2abbf5);
             availableRanks.setFooter('Type !role (role) to assign yourself the role');
             availableRanks.setTimestamp();
