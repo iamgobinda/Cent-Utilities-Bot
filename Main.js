@@ -31,7 +31,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: '!help',
+			name: 'my commands | !help',
 			type: 'STREAMING',
 			url: 'https://www.twitch.tv/monstercat'
 		}
