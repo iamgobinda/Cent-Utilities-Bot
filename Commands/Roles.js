@@ -65,7 +65,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'SFX' || args[0] === 'Sound')
+        else if(args[0] === 'SFX' || args[0] === 'Sound' || args[0] === 'Sound and SFX Designer')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Sound and SFX Designer");
@@ -84,7 +84,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Bot-Helper' || args[0] === 'Bot')
+        else if(args[0] === 'Bot Helper' || args[0] === 'Bot')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Bot Helper");
@@ -103,7 +103,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'PlayTester' || args[0] === 'Playtester')
+        else if(args[0] === 'PlayTester' || args[0] === 'Playtesters')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Playtesters");
@@ -122,7 +122,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'Giveaway-Notifs' || args[0] === 'giveaway-notifs')
+        else if(args[0] === 'Giveaway Notifications')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Giveaway Notifications");
@@ -141,7 +141,7 @@ module.exports = {
 
             message.channel.send(GaveRole);
         }
-        else if(args[0] === 'YT-Notifs' || args[0] === 'yt-notifs')
+        else if(args[0] === 'Youtube Notifications')
         {
             //Finding the role
             let role = message.guild.roles.cache.find(r => r.name === "Youtube Notifications");
@@ -166,18 +166,20 @@ module.exports = {
         else if(!args.lenght)
         {
             const availableRanks = new Discord.MessageEmbed();
+            availableRanks.setThumbnail('https://cdn.discordapp.com/attachments/751320406819995728/757925189009932288/download__2_-removebg-preview.png');
             availableRanks.setTitle('**SELF-ASSIGN ROLES!**');
             availableRanks.setDescription('SELF-ASSIGN ROLES\n These are the roles you can assign yourself!\nJust use the role command `(!Role)` followed by the role you want!\nAs an example, doing `!Role blue` would give you the blue role if blue is part of the\n list.');
             availableRanks.addField('Role 1\n**GameDev**', 'Get access to gamedev-only text and voice channels!', false);
             availableRanks.addField('Role 2\n**Artist**', 'Get access to artist-only text and voice channels', false);
             availableRanks.addField('Role 3\n**Gamer**', 'Get access to gamer-only text and voice channels!', false);
-            availableRanks.addField('Role 4\n**Sound Designers**', 'Get access to Sound Designers-only text and voice chat !\n**NOTE:** to get this role you must type `!roles SFX` or `!roles sound`.', false);
-            availableRanks.addField('Role 5\n**Bot Helper**', 'Get access to bot-helper-only text and voice channels\n**NOTE:** to get this role you must type `!roles Bot-Helper` or `!roles Bot`.', false);
+            availableRanks.addField('Role 4\n**Sound Designers**', 'Get access to Sound Designers-only text and voice chat !', false);
+            availableRanks.addField('Role 5\n**Bot Helper**', 'Get access to bot-helper-only text and voice channels!', false);
             availableRanks.addField('Role 6\n**Playtester**', 'Be the first one to review and play our games!', false);
-            availableRanks.addField('Role 7\n**Giveaway notifications**', 'You will be notified when we host a giveaway!\n**NOTE:** to get this role you must type `!roles Giveaway-Notifs`.', false);
-            availableRanks.addField('Role 8\n**Youtube notifications**', 'You will be notified when we upload a new video!\n**NOTE:** to get this role you must type `!roles YT-Notifs`.', false);
+            availableRanks.addField('Role 7\n**Giveaway notifications**', 'You will be notified when we host a giveaway!', false);
+            availableRanks.addField('Role 8\n**Youtube notifications**', 'You will be notified when we upload a new video!', false);
             availableRanks.setColor(0x2abbf5);
             availableRanks.setFooter('Type !role (role) to assign yourself the role');
+            availableRanks.setTimestamp();
     
             message.channel.send(availableRanks);
         }

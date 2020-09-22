@@ -223,7 +223,7 @@ module.exports = {
             Help.addField('**User Commands: **', "`Roles`, `8ball`, `Avatar`, `RoleInfo`, `Roll` , `Suggest`", true);
             Help.addField('**Bot Commands: **', "`Ping`", true);
             Help.addField('**Mod Commands: **', '`Purge`, `Rules`, `RuleInfo`, `SlowMode`, `Poll`, `Embed`', true);
-            Help.setFooter('Hint: alias for help is "h" !');
+            Help.setFooter('TIP: Alias for help is "h"!');
             Help.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
             Help.setColor(0x2abbf5);
 
