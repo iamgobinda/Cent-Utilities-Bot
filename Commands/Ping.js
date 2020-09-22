@@ -7,11 +7,11 @@ module.exports = {
   coolDown: 10,
 	async execute(bot, message, args)
 	{
-    message.channel.send(`🏓 Pinging....`).then((msg) => {
+    message.channel.send(`🏓 Testing Ping....`).then((msg) => {
       const _ = new Discord.MessageEmbed()
-        .setTitle("Pong!")
+        .setTitle("P")
         .setDescription(
-          `:ping_pong: Pong!\nEvaluation time is ${getRndInteger(0, 2)}ms\nLatency is ${Math.floor(
+          `:ping_pong: Pong!\n This does not really matter much!\nEvaluation time is ${getRndInteger(0, 2)}ms\nLatency is ${Math.floor(
             msg.createdTimestamp - message.createdTimestamp
           )}ms\nAPI Latency is ${Math.round(bot.ws.ping)}ms`
         )
