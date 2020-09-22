@@ -39,15 +39,16 @@ client.once('ready', () => {
 });
 //trigers when a user joins! haha yes
 client.on('guildMemberAdd', member => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'portal');
+	const channel = member.guild.channels.cache.find(ch => ch.name === '🌀│portal');
 	if (!channel) return;
 
 	const Welcomevent = new Discord.MessageEmbed();
 	Welcomevent.setColor(`RANDOM`);
-	Welcomevent.setAuthor(member.user.username);
+	Welcomevent.setAuthor(member.user.username , member.user.displayAvatarURL());
 	Welcomevent.setThumbnail(member.user.displayAvatarURL());
 	Welcomevent.setTitle('<:blobnitro:750751853473693758> Hello!');
 	Welcomevent.setDescription('Welcome bud! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
+	Welcomevent.setTimestamp();
 
 	channel.send(Welcomevent);
 });
