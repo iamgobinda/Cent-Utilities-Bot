@@ -37,6 +37,18 @@ client.once('ready', () => {
 	})
 	console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber);
 });
+//trigers when a user joins! haha yes
+client.on('guildMemberAdd', member => {
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'portal');
+	if (!channel) return;
+
+	const Welcomevent = new Discord.MessageEmbed();
+	Welcomevent.setColor(0x32ba4b);
+	Welcomevent.setTitle('<:blobnitro:750751853473693758> Hello!');
+	Welcomevent.setDescription('Welcome bud! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
+
+	channel.send(Welcomevent);
+});
 
 // Triggred when user sends a message or we can check for a specific
 // message here.
@@ -56,6 +68,8 @@ client.on('message', message => {
 	{
 		cooldowns.set(command.name, new Discord.Collection());
 	}
+
+
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
