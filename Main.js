@@ -88,8 +88,9 @@ client.on('message', message => {
 			const timeLeft = (expirationTime - now) / 1000;
 			const Cooldownembed = new Discord.MessageEmbed();
 			Cooldownembed.setColor(0xf53d3d)
-			Cooldownembed.setTitle('Be A normie Common!');
-			Cooldownembed.setDescription(`If you spam my commands I will die soon! You can use the command \`${command.name}\` again in ${timeLeft.toFixed(1)}!`)
+			Cooldownembed.setTitle('Be a normie Common!');
+			Cooldownembed.setDescription(`If you spam my commands , I will die soon! You can use the command \`${command.name}\` again in ${timeLeft.toFixed(1)} seconds!`)
+			Cooldownembed.setTimestamp();
 			return message.reply(Cooldownembed);
 		}
 	}

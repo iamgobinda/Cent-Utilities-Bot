@@ -28,6 +28,7 @@ module.exports = {
         userEmbed.addField('**Username: **', ment.tag);
         userEmbed.addField('**Status: **', ment.presence.status);
         userEmbed.addField('**ID: **', ment.id);
+        userEmbed.setTimestamp();
 
         message.channel.send(userEmbed);
     },
