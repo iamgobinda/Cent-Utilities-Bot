@@ -26,8 +26,7 @@ module.exports = {
         }
         else if(args[0] === 'kill')
         {
-            message.channel.send('Killing the bot....')
-            .then(msg => client.destroy())
+            client.destroy();
         }
     },
 };
