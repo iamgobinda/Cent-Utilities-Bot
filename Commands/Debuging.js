@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'Debug',
+    name: 'debug',
     description: 'Debugging commands for me, and only me !',
     aliases: ['d', 'de'],
     async execute(client, message, args) 
@@ -23,6 +23,11 @@ module.exports = {
             DebugCommandsList.setColor(0x2abbf5);
 
             message.channel.send(DebugCommandsList);
+
+            if(args[0] === 'kill')
+            {
+                throw ReferenceError;
+            }
         }
     },
 };
