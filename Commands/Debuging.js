@@ -15,7 +15,7 @@ module.exports = {
 
             message.channel.send(Error);
         }
-        else if(message.member.roles.cache.has('748515939821158443'))
+        else if(message.member.roles.cache.has('748515939821158443') && !args.lenght)
         {
             const DebugCommandsList = new Discord.MessageEmbed();
             DebugCommandsList.setTitle('**List of Debugging commands: **');
@@ -26,16 +26,9 @@ module.exports = {
 
             if(args[0] === 'kill')
             {
-                resetBot(message.channel);
+                message.channel.send('Killing the bot....')
+                .then(msg => client.destroy())
             }
         }
     },
 };
-
-// Turn bot off (destroy), then turn it back on
-function resetBot(channel) 
-{
-    // send channel a message that you're resetting bot [optional]
-    channel.send('Resetting...')
-    .then(msg => client.destroy())
-}
