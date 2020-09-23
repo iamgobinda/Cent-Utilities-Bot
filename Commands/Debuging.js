@@ -26,7 +26,9 @@ module.exports = {
         }
         else if(args[0] === 'kill')
         {
+            message.reply("Resetting...");
             client.destroy();
+            client.login(process.env.token);
         }
     },
 };
