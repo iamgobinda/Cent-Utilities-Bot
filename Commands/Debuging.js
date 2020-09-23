@@ -24,7 +24,7 @@ module.exports = {
 
             message.channel.send(DebugCommandsList);
         }
-        else if(args[0] === 'kill' && message.member.roles.cache.has('748515939821158443'))
+        else if(args[0] === 'kill'
         {
             message.channel.send('Killing the bot....')
             .then(msg => client.destroy())
