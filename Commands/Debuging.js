@@ -26,8 +26,17 @@ module.exports = {
 
             if(args[0] === 'kill')
             {
-                throw ReferenceError;
+                resetBot(message.channel);
             }
         }
     },
 };
+
+// Turn bot off (destroy), then turn it back on
+function resetBot(channel) 
+{
+    // send channel a message that you're resetting bot [optional]
+    channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(process.env.token));
+}
