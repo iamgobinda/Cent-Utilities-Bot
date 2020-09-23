@@ -15,6 +15,12 @@ module.exports = {
 
             message.channel.send(Error);
         }
+        else if(args[0] === 'kill')
+        {
+            message.reply("Resetting...");
+            client.destroy();
+            client.login(process.env.token);
+        }
         else if(message.member.roles.cache.has('748515939821158443') && !args.lenght)
         {
             const DebugCommandsList = new Discord.MessageEmbed();
@@ -23,12 +29,6 @@ module.exports = {
             DebugCommandsList.setColor(0x2abbf5);
 
             message.channel.send(DebugCommandsList);
-        }
-        else if(args[0] === 'kill')
-        {
-            message.reply("Resetting...");
-            client.destroy();
-            client.login(process.env.token);
         }
     },
 };
