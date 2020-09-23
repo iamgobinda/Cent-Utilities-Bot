@@ -26,6 +26,7 @@ module.exports = {
             {
                 let embedPoll = new Discord.MessageEmbed();
                 embedPoll.setAuthor('From ' + message.author.username , message.author.displayAvatarURL());
+                embedPoll.setThumbnail('https://cdn.discordapp.com/attachments/756000439350198294/758195018396729344/1112549471909_7543dde099089941d3c3_512-removebg-preview.png')
                 embedPoll.setTitle('** 🚥 NEW POLL: **');
                 embedPoll.setDescription(pollDescription);
                 embedPoll.setColor(0x2abbf5);
