@@ -25,7 +25,7 @@ module.exports = {
             try
             {
                 const embed = new Discord.MessageEmbed();
-                embed.setAuthor('From ' + message.author.username + message.author.displayAvatarURL());
+                embed.setAuthor('From ' + message.author.username , message.author.displayAvatarURL());
                 embed.setThumbnail(message.author.displayAvatarURL());
                 embed.setTitle('**ANNOUCEMENT**');
                 embed.setDescription(announcement);
