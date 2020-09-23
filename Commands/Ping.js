@@ -9,7 +9,6 @@ module.exports = {
 	{
     message.channel.send(`🏓 Testing Ping....`).then((msg) => {
       const _ = new Discord.MessageEmbed()
-        .setTitle("P")
         .setDescription(
           `:ping_pong: Pong!\n This does not really matter much!\nEvaluation time is ${getRndInteger(0, 2)}ms\nLatency is ${Math.floor(
             msg.createdTimestamp - message.createdTimestamp
