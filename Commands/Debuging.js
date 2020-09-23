@@ -23,12 +23,11 @@ module.exports = {
             DebugCommandsList.setColor(0x2abbf5);
 
             message.channel.send(DebugCommandsList);
-
-            if(args[0] === 'kill')
-            {
-                message.channel.send('Killing the bot....')
-                .then(msg => client.destroy())
-            }
+        }
+        else if(args[0] === 'kill' && message.member.roles.cache.has('748515939821158443'))
+        {
+            message.channel.send('Killing the bot....')
+            .then(msg => client.destroy())
         }
     },
 };
