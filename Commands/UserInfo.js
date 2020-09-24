@@ -6,16 +6,23 @@ module.exports = {
     async execute(client, message, args) {
         const Discord = require('discord.js');
 
-        let ment = message.mentions.users.first();
+        let ment = message.mentions.members.first()||
+        message.guild.members.cache.get(args[0]);
+        let firstment = message.author;
+
+        const ui = new Discord.MessageEmbed();
+        ui.setAuthor(firstment.username + '#' + firstment.discriminator, firstment.displayAvatarURL());
+        ui.setThumbnail(firstment.displayAvatarURL());
+        ui.setColor(`RANDOM`);
+        ui.addField('**Created: **', firstment.createdAt);
+        ui.addField('**Username: **', firstment.tag);
+        ui.addField('**Status: **', firstment.presence.status);
+        ui.addField('**ID: **', firstment.id);
+        ui.setTimestamp();
+
+        message.channel.send(ui);
 
         if (!ment) {
-            const userEmbed = new Discord.MessageEmbed();
-            userEmbed.setTitle('Incorrect Usage!');
-            userEmbed.setDescription('**Usage:**\n`UserInfo <mentioned User>`');
-            userEmbed.setFooter('TIP: To see your own info use UserInfo <your mentioned name>.')
-            userEmbed.setColor(0xf53d3d);
-
-            message.channel.send(userEmbed).then(m => m.delete({timeout: 500}));
 
             return;
         }
