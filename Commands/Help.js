@@ -230,8 +230,25 @@ module.exports = {
                 UserInfoCmd.setColor(0x2abbf5);
     
                 message.channel.send(UserInfoCmd);
-        } else if (!args.lenght) {
+        } else if (!args.lenght && message.channel.type == "dm") {
             
+            const Help = new Discord.MessageEmbed();
+            Help.setTitle('<:info:758237327016984576> Help Command');
+            Help.addField('If you want more information on a command: ', ' do `help <command name>`', false);
+            Help.addField('**Info Commands:** ', ' `BotInfo`' , true);
+            Help.addField('**User Commands: **', " `8ball`, `Avatar`, `Roll` , `remindme`", true);
+            Help.addField('**Bot Commands: **', "`Ping`", true);
+            Help.setFooter('TIP: Alias for help is "h"!');
+            Help.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
+            Help.setColor(0x2abbf5);
+
+            message.channel.send(Help);
+
+            
+
+        }
+        else if (!args.lenght) {
+
             const Help = new Discord.MessageEmbed();
             Help.setTitle('<:info:758237327016984576> Help Command');
             Help.addField('If you want more information on a command: ', ' do `help <command name>`', false);
@@ -245,9 +262,7 @@ module.exports = {
             Help.setColor(0x2abbf5);
 
             message.channel.send(Help);
-
             
-
         }
         
     },
