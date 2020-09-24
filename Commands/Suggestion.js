@@ -42,9 +42,9 @@ module.exports = {
         sucess.setThumbnail(message.author.avatarURL());
         sucess.setTitle('<:greentick:750751680613843105> Success!');
         sucess.setDescription('Successfully sent your sugesstion to be decided upon! We will contact you if the suggestion gets approved!');
-        sucess.setColor(0x32ba4b);
+        sucess.setColor(0x32ba4b)
 
-        return message.channel.send(sucess);
+        return message.channel.send(sucess).then(m => m.delete({timeout: 500}));
 
     }
 };

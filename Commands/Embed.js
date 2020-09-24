@@ -17,22 +17,23 @@ module.exports = {
 			Error.setDescription('Only Staff can send embeds!');
 			Error.setColor(0xf53d3d);
 
-			message.channel.send(Error);
+			message.channel.send(Error).then(m => m.delete({timeout: 500}));
 			return;
         }
         else if(message.member.roles.cache.has('753283575276896337'))
         {
             try
             {
+                
                 const embed = new Discord.MessageEmbed();
                 embed.setAuthor('From ' + message.author.username , message.author.displayAvatarURL());
                 embed.setThumbnail(message.author.displayAvatarURL());
-                embed.setTitle('**ANNOUCEMENT**');
+                embed.setTitle('**📢 ANNOUCEMENT**');
                 embed.setDescription(announcement);
                 embed.setColor('RANDOM');
                 embed.setTimestamp();
         
-                channel.send(embed);
+                message.channel.bulkDelete(1).then(channel.send(embed));
             }
             catch
             {
@@ -41,7 +42,7 @@ module.exports = {
                 Error.setDescription('Usage: `<channel> <annoucement>`');
                 Error.setColor(0xf53d3d);
     
-                message.channel.send(Error);
+                message.channel.send(Error).then(m => m.delete({timeout: 500}));
             }
         }
     },

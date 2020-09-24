@@ -93,7 +93,7 @@ module.exports = {
             Error.setDescription('**Usage:** `!Roleinfo <Role name>`')
             Error.setColor(0xf53d3d);
 
-            message.channel.send(Error);
+            message.channel.send(Error).then(m => m.delete({timeout: 500}));
         }
 	},
 };

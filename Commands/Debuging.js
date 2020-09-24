@@ -13,7 +13,7 @@ module.exports = {
             Error.setDescription('You are not allowed to access debugging commands.');
             Error.setColor(0xf53d3d);
 
-            message.channel.send(Error);
+            message.channel.send(Error).then(m => m.delete({timeout: 500}));
         }
         else if(args[0] === 'kill' && message.member.roles.cache.has('748515939821158443'))
         {
@@ -34,7 +34,7 @@ module.exports = {
             catch(error)
             {
                 const Err = new Discord.MessageEmbed();
-                Err.setTitle('<:redtick:750751681175748608> **Error Found !**');
+                Err.setTitle('<:redtick:750751681175748608> **Error Found!**');
                 Err.setDescription(error);
                 error.setColor(0xf53d3d);
 

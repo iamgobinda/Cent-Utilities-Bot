@@ -15,7 +15,7 @@ module.exports = {
             userEmbed.setFooter('TIP: To see your own info use UserInfo <your mentioned name>.')
             userEmbed.setColor(0xf53d3d);
 
-            message.channel.send(userEmbed);
+            message.channel.send(userEmbed).then(m => m.delete({timeout: 500}));
 
             return;
         }

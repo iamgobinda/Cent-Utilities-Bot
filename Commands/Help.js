@@ -6,10 +6,12 @@ module.exports = {
     aliases: ['info', 'h'],
     async execute(client, message, args) {
         const Discord = require('discord.js');
+        
+
 
         if (args[0] === 'serverinfo') {
             const ServerInfo = new Discord.MessageEmbed();
-            ServerInfo.setTitle('Information on the ServerInfo Command.');
+            ServerInfo.setTitle('<:info:758237327016984576> Information on the ServerInfo Command.');
             ServerInfo.addField('**Command:** ', 'ServerInfo', false);
             ServerInfo.addField('**Description:**', 'Displays the server information like creator and number of members, dynamically.', false);
             ServerInfo.addField('**CoolDown: **', '`3 secs`', false);
@@ -22,7 +24,7 @@ module.exports = {
             message.channel.send(ServerInfo);
         } else if (args[0] === 'ping') {
             const PingInfo = new Discord.MessageEmbed();
-            PingInfo.setTitle('Information on the Ping Command.');
+            PingInfo.setTitle('<:info:758237327016984576> Information on the Ping Command.');
             PingInfo.addField('**Command:** ', 'Ping', false);
             PingInfo.addField('**Description:**', 'Displayes the current ping of the bot (in ms)', false);
             PingInfo.addField('**CoolDowns: ** ', '`2 secs`', false);
@@ -35,7 +37,7 @@ module.exports = {
             message.channel.send(PingInfo);
         } else if (args[0] === 'purge') {
             const PurgeInfo = new Discord.MessageEmbed();
-            PurgeInfo.setTitle('Information on the purge command.');
+            PurgeInfo.setTitle('<:info:758237327016984576> Information on the purge command.');
             PurgeInfo.addField('**Command:** ', 'purge', false);
             PurgeInfo.addField('**Cooldowns: **', '`5 secs`', false);
             PurgeInfo.addField('**Description:**', 'Deletes the amout of messages specified.', false);
@@ -48,7 +50,7 @@ module.exports = {
             message.channel.send(PurgeInfo);
         } else if (args[0] === 'Roles') {
             const RolesInfo = new Discord.MessageEmbed();
-            RolesInfo.setTitle('Information on the Roles command.');
+            RolesInfo.setTitle('<:info:758237327016984576> Information on the Roles command.');
             RolesInfo.addField('**Command:** ', '`Roles`', false);
             RolesInfo.addField('**Cooldowns: **', '`20 secs`', false);
             RolesInfo.addField('**Description:**', 'Shows and gives user the selected role.', false);
@@ -61,7 +63,7 @@ module.exports = {
             message.channel.send(RolesInfo);
         } else if (args[0] === 'UserInfo') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the UserInfo command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the UserInfo command.');
             UserInfoCmd.addField('**Command:** ', '`UserInfo`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`5 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Shows the information of the current user or other mentioned users.', false);
@@ -74,7 +76,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Slowmode') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Slowmode command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Slowmode command.');
             UserInfoCmd.addField('**Command:** ', '`Slowmode`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`2 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Changes slowmode of the channel.', false);
@@ -87,7 +89,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Rules') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Rules command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Rules command.');
             UserInfoCmd.addField('**Command:** ', '`Rules`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`1 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Shows all the available rules or only a selected one.', false);
@@ -100,7 +102,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Roll') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Roll command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Roll command.');
             UserInfoCmd.addField('**Command:** ', '`Roll`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`1 secs`', false);
             UserInfoCmd.addField('**Description:**', 'A command that rolls the dice !', false);
@@ -113,7 +115,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Roleinfo') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Roleinfo command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Roleinfo command.');
             UserInfoCmd.addField('**Command:** ', '`RoleInfo`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`3 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Displays, indiviual roles.', false);
@@ -126,7 +128,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Poll') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Poll command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Poll command.');
             UserInfoCmd.addField('**Command:** ', '`Poll`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`60 secs`', false);
             UserInfoCmd.addField('**Description:**', 'A poll command, used to make polls', false);
@@ -139,7 +141,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Embed') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Embed command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Embed command.');
             UserInfoCmd.addField('**Command:** ', '`Embed`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`30 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Used to make annoucements in an embed form !', false);
@@ -152,7 +154,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'BotInfo') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Botinfo command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Botinfo command.');
             UserInfoCmd.addField('**Command:** ', '`Botinfo`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`1 secs`', false);
             UserInfoCmd.addField('**Description:**', 'a command that displays the Bots\'s info, such as uptime.', false);
@@ -165,7 +167,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Avatar') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Avatar command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Avatar command.');
             UserInfoCmd.addField('**Command:** ', '`Avatar`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`1 secs`', false);
             UserInfoCmd.addField('**Description:**', 'a command that shows the avatar of the current user.', false);
@@ -178,7 +180,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === '8ball') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the 8ball command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the 8ball command.');
             UserInfoCmd.addField('**Command:** ', '`8Ball`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`3 secs`', false);
             UserInfoCmd.addField('**Description:**', 'a fun command for the popular 8ball game !', false);
@@ -191,7 +193,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Roles') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Roles command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Roles command.');
             UserInfoCmd.addField('**Command:** ', '`Roles`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`10 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Shows all the available roles. and gives them', false);
@@ -204,7 +206,7 @@ module.exports = {
             message.channel.send(UserInfoCmd);
         } else if (args[0] === 'Suggest') {
             const UserInfoCmd = new Discord.MessageEmbed();
-            UserInfoCmd.setTitle('Information on the Suggest command.');
+            UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Suggest command.');
             UserInfoCmd.addField('**Command:** ', '`Suggest`', false);
             UserInfoCmd.addField('**Cooldowns: **', '`10 secs`', false);
             UserInfoCmd.addField('**Description:**', 'Suggest something and maybe it gets approved?', false);
@@ -215,19 +217,38 @@ module.exports = {
             UserInfoCmd.setColor(0x2abbf5);
 
             message.channel.send(UserInfoCmd);
+         } else if (args[0] === 'remindme') {
+                const UserInfoCmd = new Discord.MessageEmbed();
+                UserInfoCmd.setTitle('<:info:758237327016984576> Information on the Remindme command.');
+                UserInfoCmd.addField('**Command:** ', '`remindme`', false);
+                UserInfoCmd.addField('**Cooldowns: **', '`3 secs`', false);
+                UserInfoCmd.addField('**Description:**', 'Set a timer and the bot will remind you!', false);
+                UserInfoCmd.addField('**Aliases: **', 'reminder', false);
+                UserInfoCmd.addField('**Usage:**', '`!remindme <time>`', false);
+                UserInfoCmd.addField('**Permission Level:** ', 'User', false);
+                UserInfoCmd.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
+                UserInfoCmd.setColor(0x2abbf5);
+    
+                message.channel.send(UserInfoCmd);
         } else if (!args.lenght) {
+            
             const Help = new Discord.MessageEmbed();
-            Help.setTitle('Help Command');
+            Help.setTitle('<:info:758237327016984576> Help Command');
             Help.addField('If you want more information on a command: ', ' do `help <command name>`', false);
             Help.addField('**Info Commands:** ', '`ServerInfo`, `UserInfo`, `BotInfo`', true);
-            Help.addField('**User Commands: **', "`Roles`, `8ball`, `Avatar`, `RoleInfo`, `Roll` , `Suggest`", true);
+            Help.addField('**User Commands: **', "`Roles`, `8ball`, `Avatar`, `RoleInfo`, `Roll` , `Suggest` , `remindme`", true);
             Help.addField('**Bot Commands: **', "`Ping`", true);
-            Help.addField('**Mod Commands: **', '`Purge`, `Rules`, `RuleInfo`, `SlowMode`, `Poll`, `Embed`', true);
+            Help.addField('**Mod Commands: **', '`Purge`, `Rules`, `RuleInfo`, `SlowMode`, `Poll`, `Embed` , `faq`', true);
+            Help.addField('**Debugging commands : **', '`Kill` , `Error`')
             Help.setFooter('TIP: Alias for help is "h"!');
             Help.setThumbnail('https://media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png?width=475&height=475');
             Help.setColor(0x2abbf5);
 
             message.channel.send(Help);
+
+            
+
         }
+        
     },
 };

@@ -15,7 +15,7 @@ module.exports = {
 			Error.setDescription('Only Staff can bring up rules!');
 			Error.setColor(0xf53d3d);
 
-			message.channel.send(Error);
+			message.channel.send(Error).then(m => m.delete({timeout: 500}));
 			return;
         }
         else if(message.member.roles.cache.has('753283575276896337') && args[0] === '1')

@@ -14,7 +14,7 @@ module.exports = {
             Error.setDescription('Only Staff can purge!');
             Error.setColor(0xf53d3d);
 
-            message.channel.send(Error);
+            message.channel.send(Error).then(m => m.delete({timeout: 500}));
             return;
         }
 
@@ -22,16 +22,16 @@ module.exports = {
             const NotAValidNumber = new Discord.MessageEmbed();
             NotAValidNumber.setTitle('**<:redtick:750751681175748608> Not a valid number!**');
             NotAValidNumber.setDescription('That doesn\'t seem to be a valid number.');
-            NotAValidNumber.setColor(0xf53d3d);
+            NotAValidNumber.setColor(0xf53d3d)
 
-            return message.reply(NotAValidNumber);
+            return message.reply(NotAValidNumber).then(m => m.delete({timeout: 500}));
         } else if (amount <= 1 || amount > 100) {
             const TooManySelected = new Discord.MessageEmbed();
             TooManySelected.setTitle('**<:redtick:750751681175748608> Too many messages selected!**');
             TooManySelected.setDescription('You can only input a number between 1 and 99.');
             TooManySelected.setColor(0xf53d3d);
 
-            return message.reply(TooManySelected);
+            return message.reply(TooManySelected).then(m => m.delete({timeout: 500}));
         }
 
         message.channel.bulkDelete(amount, true).catch(err => {
@@ -50,6 +50,7 @@ module.exports = {
         Success.setDescription('Deleted ' + AmountOfMessagesDeleted + " messages! You can now delete this message!");
         Success.setColor(0x32ba4b);
 
-        message.channel.send(Success);
+        message.channel.send(Success).then(m => m.delete({timeout: 500}));
+
     },
 };

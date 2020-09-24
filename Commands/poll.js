@@ -11,7 +11,7 @@ module.exports = {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
 			const Error = new Discord.MessageEmbed();
-			Error.setTitle('ERROR!');
+			Error.setTitle('<:redtick:750751681175748608> ERROR!');
 			Error.setDescription('Only Staff can do polls!');
 			Error.setColor(0xf53d3d);
 
@@ -22,6 +22,8 @@ module.exports = {
         {
             let pollChannel = message.mentions.channels.first();
             let pollDescription = args.slice(1).join(" ");
+
+            message.channel.bulkDelete(1);
             try
             {
                 let embedPoll = new Discord.MessageEmbed();
@@ -43,7 +45,7 @@ module.exports = {
                 Error.setDescription('Usage: `<channel> <msg>`');
                 Error.setColor(0xf53d3d);
     
-                message.channel.send(Error);
+                message.channel.send(Error).then(m => m.delete({timeout: 500}));
             }
         }
     },
