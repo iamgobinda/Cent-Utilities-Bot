@@ -29,11 +29,10 @@ const cooldowns = new Discord.Collection();
 // this event will only trigger one time after logging in
 client.once('ready', () => {
 	client.user.setPresence({
-		status: 'online',
+		status: 'idle',
 		activity: {
-			name: 'my commands | !help',
-			type: 'STREAMING',
-			url: 'https://www.twitch.tv/monstercat'
+			name: 'Idle members 🌙',
+			type: 'WATCHING',
 		}
 	})
 	console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber);
