@@ -29,9 +29,9 @@ const cooldowns = new Discord.Collection();
 // this event will only trigger one time after logging in
 client.once('ready', () => {
 	client.user.setPresence({
-		status: 'idle',
+		status: 'online',
 		activity: {
-			name: 'Idle members 🌙',
+			name: 'one imposter is Among Us! | !help',
 			type: 'WATCHING',
 		}
 	})
