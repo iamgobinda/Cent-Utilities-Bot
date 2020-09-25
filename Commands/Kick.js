@@ -30,29 +30,29 @@ module.exports = {
                 {
                     console.log(err);
 
-                    const err = new Discord.MessageEmbed();
-                    err.setTitle('Unkown error !');
-                    err.setColor(0xf53d3d);
+                    const uerr = new Discord.MessageEmbed();
+                    uerr.setTitle('Unkown error !');
+                    uerr.setColor(0xf53d3d);
 
                     message.channel.send(err);
                 }
             }
             else if(!member)
             {
-                const err = new Discord.MessageEmbed();
-                err.setTitle('**Invaild Mention!**');
-                err.setDescription('Usage: `Kick <memberid>`');
-                err.setColor(0x32ba4b);
+                const nerr = new Discord.MessageEmbed();
+                nerr.setTitle('**Invaild Mention!**');
+                nerr.setDescription('Usage: `Kick <memberid>`');
+                nerr.setColor(0x32ba4b);
 
                 message.channel.send(err);
             }
         }
         else if(!message.member.roles.cache.has('753283575276896337'))
         {
-            const err = new Discord.MessageEmbed();
-            err.setTitle('**YOU ARE NOT ELIGEBLE TO KICK !**');
-            err.setDescription('Only staff and kick !');
-            err.setColor(0x32ba4b);
+            const Eerr = new Discord.MessageEmbed();
+            Eerr.setTitle('**YOU ARE NOT ELIGEBLE TO KICK !**');
+            Eerr.setDescription('Only staff and kick !');
+            Eerr.setColor(0x32ba4b);
 
             message.channel.send(err);
         }
