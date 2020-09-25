@@ -107,6 +107,32 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	};
+	if(commandName === 'kick' && !message.member.roles.cache.has('753283575276896337'))
+	{
+		const err = new Discord.MessageEmbed();
+		err.setTitle('You don\'t have the permission to kick memebers !');
+		err.setDescription('Only staff can kick members !');
+		err.setColor(0xf53d3d);
+
+		message.channel.send(err);
+	}
+	else if(commandName === 'kick' && message.member.roles.cache.has('753283575276896337'))
+	{
+		let memeberid = message.content.substring(message.content.indexOf(' ') + 1);
+		let member = message.guild.members.cache.get(memeberid);
+		if(member)
+		{
+			try
+			{
+				await member.kick();
+				console.log('A member was kicked !');
+			}
+			catch(err)
+			{
+				console.log(err);
+			}
+		}
+	}
 });
 
 // login to Discord with your app's token
