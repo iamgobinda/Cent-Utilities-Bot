@@ -55,7 +55,7 @@ client.on('guildMemberAdd', member => {
 
 // Triggred when user sends a message or we can check for a specific
 // message here.
-client.on('message', message => {
+client.on('message', async message => {
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
