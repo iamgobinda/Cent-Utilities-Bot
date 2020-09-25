@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['m', 'mo'],
     async execute(client, message, args) 
     {
-        if(args[0] === 'Kick' && !message.member.roles.cache.has('753283575276896337'))
+        if(args[0] === 'kick' && !message.member.roles.cache.has('753283575276896337'))
         {
             const err = new Discord.MessageEmbed();
             err.setTitle('You don\'t have the permission to kick memebers !');
@@ -15,7 +15,7 @@ module.exports = {
 
             message.channel.send(err);
         }
-        else if(args[0] === 'Kick' && message.member.roles.cache.has('753283575276896337'))
+        else if(args[0] === 'kick' && message.member.roles.cache.has('753283575276896337'))
         {
             let memeberid = message.content.substring(message.content.indexOf(' ') + 1);
             let member = message.guild.members.cache.get(memeberid);
