@@ -235,7 +235,6 @@ module.exports = {
             const Help = new Discord.MessageEmbed();
             Help.setTitle('<:info:758237327016984576> Help Command');
             Help.addField('If you want more information on a command: ', ' do `help <command name>`', false);
-            Help.addField('**Info Commands:** ', ' `BotInfo`' , true);
             Help.addField('**User Commands: **', " `8ball`, `Avatar`, `Roll` , `remindme`", true);
             Help.addField('**Bot Commands: **', "`Ping`", true);
             Help.setFooter('TIP: Alias for help is "h"!');
