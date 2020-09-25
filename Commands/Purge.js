@@ -8,7 +8,8 @@ module.exports = {
 
         var amount = parseInt(args[0]) + 1;
 
-        if (!message.member.roles.cache.has('753283575276896337')) {
+        if (!message.member.roles.cache.has('753283575276896337')) 
+        {
             const Error = new Discord.MessageEmbed();
             Error.setTitle('<:redtick:750751681175748608> ERROR!');
             Error.setDescription('Only Staff can purge!');
@@ -18,14 +19,16 @@ module.exports = {
             return;
         }
 
-        if (isNaN(amount)) {
+        if (isNaN(amount)) 
+        {
             const NotAValidNumber = new Discord.MessageEmbed();
             NotAValidNumber.setTitle('**<:redtick:750751681175748608> Not a valid number!**');
             NotAValidNumber.setDescription('That doesn\'t seem to be a valid number.');
             NotAValidNumber.setColor(0xf53d3d)
 
             return message.reply(NotAValidNumber).then(m => m.delete({timeout: 500}));
-        } else if (amount <= 1 || amount > 100) {
+        } else if (amount <= 1 || amount > 100) 
+        {
             const TooManySelected = new Discord.MessageEmbed();
             TooManySelected.setTitle('**<:redtick:750751681175748608> Too many messages selected!**');
             TooManySelected.setDescription('You can only input a number between 1 and 99.');
