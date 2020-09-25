@@ -42,7 +42,7 @@ module.exports = {
                 const nerr = new Discord.MessageEmbed();
                 nerr.setTitle('**Invaild Mention!**');
                 nerr.setDescription('Usage: `Kick <memberid>`');
-                nerr.setColor(0x32ba4b);
+                nerr.setColor(0xf53d3d);
 
                 message.channel.send(nerr);
             }
@@ -52,7 +52,7 @@ module.exports = {
             const Eerr = new Discord.MessageEmbed();
             Eerr.setTitle('**YOU ARE NOT ELIGEBLE TO KICK !**');
             Eerr.setDescription('Only staff and kick !');
-            Eerr.setColor(0x32ba4b);
+            Eerr.setColor(0xf53d3d);
 
             message.channel.send(Eerr);
         }
