@@ -31,7 +31,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'one imposter is Among Us! | !help',
+			name: 'for commands! | !help',
 			type: 'WATCHING',
 		}
 	})
@@ -55,7 +55,7 @@ client.on('guildMemberAdd', member => {
 
 // Triggred when user sends a message or we can check for a specific
 // message here.
-client.on('message', message => {
+client.on('message', async message => {
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
