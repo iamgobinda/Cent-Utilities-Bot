@@ -34,7 +34,7 @@ module.exports = {
                     uerr.setTitle('Unkown error !');
                     uerr.setColor(0xf53d3d);
 
-                    message.channel.send(err);
+                    message.channel.send(uerr);
                 }
             }
             else if(!member)
@@ -44,7 +44,7 @@ module.exports = {
                 nerr.setDescription('Usage: `Kick <memberid>`');
                 nerr.setColor(0x32ba4b);
 
-                message.channel.send(err);
+                message.channel.send(nerr);
             }
         }
         else if(!message.member.roles.cache.has('753283575276896337'))
@@ -54,7 +54,7 @@ module.exports = {
             Eerr.setDescription('Only staff and kick !');
             Eerr.setColor(0x32ba4b);
 
-            message.channel.send(err);
+            message.channel.send(Eerr);
         }
     },
 };
