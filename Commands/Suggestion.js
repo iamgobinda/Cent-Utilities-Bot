@@ -27,7 +27,7 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed();
-        embed.setAuthor("SUGGESTION FROM " + message.author.tag, message.author.avatarURL());
+        embed.setAuthor("<:blobcouncil:751273055082381443>│Suggestion from " + message.author.tag, message.author.avatarURL());
         embed.setThumbnail(message.author.avatarURL());
         embed.setColor(0x2abbf5);
         embed.setDescription(args.join(" "));
@@ -44,7 +44,7 @@ module.exports = {
         sucess.setDescription('Successfully sent your sugesstion to be decided upon! We will contact you if the suggestion gets approved!');
         sucess.setColor(0x32ba4b)
 
-        return message.channel.send(sucess).then(m => m.delete({timeout: 1500}));
+        return message.channel.send(sucess).then(m => m.delete({timeout: 15000}));
 
     }
 };
