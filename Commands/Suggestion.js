@@ -14,7 +14,7 @@ module.exports = {
             return message.channel.send(Error);
         }
 
-        let channel = message.guild.channels.cache.find((x) => (x.name === "suggestion" || x.name === "suggestions"));
+        let channel = message.guild.channels.cache.find((x) => (x.name === "➕│suggestions" || x.name === "suggestions"));
 
 
         if (!channel) {
@@ -44,7 +44,7 @@ module.exports = {
         sucess.setDescription('Successfully sent your sugesstion to be decided upon! We will contact you if the suggestion gets approved!');
         sucess.setColor(0x32ba4b)
 
-        return message.channel.send(sucess).then(m => m.delete({timeout: 500}));
+        return message.channel.send(sucess).then(m => m.delete({timeout: 1500}));
 
     }
 };
