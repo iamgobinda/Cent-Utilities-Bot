@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'roles',
-	cooldown: 5,
+	cooldown: 3,
 	aliases: ['r', 'role'],
     description: 'Rank command to display and assign ranks.',
     async execute(client ,message, args) 

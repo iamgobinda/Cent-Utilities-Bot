@@ -4,7 +4,7 @@ const { execute } = require("./poll");
 module.exports = {
   name: "ping",
   description: "Returns latency and API ping",
-  coolDown: 10,
+  coolDown: 2,
 	async execute(bot, message, args)
 	{
     message.channel.send(`🏓 Testing Ping....`).then((msg) => {

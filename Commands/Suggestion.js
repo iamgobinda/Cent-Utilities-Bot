@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "suggest",
     description: "Suggest a thing!",
-    coolDown: 10,
+    coolDown: 5,
     async execute(client, message, args) {
         if (!args.length) {
             const Error = new Discord.MessageEmbed();

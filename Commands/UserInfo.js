@@ -1,6 +1,6 @@
 module.exports = {
     name: 'userinfo',
-    coolDown: 5,
+    coolDown: 2,
     description: 'A user Info command that shows the info about a user.',
     aliases: ['ui', 'useri', 'uinfo', 'whois'],
     async execute(client, message, args) {

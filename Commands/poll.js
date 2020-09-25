@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'poll',
-    coolDown: 60,
+    coolDown: 3,
 	description: 'A poll command used to make polls, to be used by staff!',
 	aliases: ['po'],
     async execute(client , message, args) 

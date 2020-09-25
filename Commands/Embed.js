@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'embed',
-    coolDown: 30,
+    coolDown: 3,
 	description: 'A command that lets you make your own embeds !!',
     aliases: ['e', 'em'],
     async execute(client ,message, args)

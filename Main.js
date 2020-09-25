@@ -88,6 +88,7 @@ client.on('message', message => {
 			const Cooldownembed = new Discord.MessageEmbed();
 			Cooldownembed.setColor(0xf53d3d)
 			Cooldownembed.setTitle('Be a normie Common!');
+			Cooldownembed.setTitle('Be a normie C\'mon!');
 			Cooldownembed.setDescription(`If you spam my commands , I will die soon! You can use the command \`${command.name}\` again in ${timeLeft.toFixed(1)} seconds!`)
 			Cooldownembed.setTimestamp();
 			return message.reply(Cooldownembed);
