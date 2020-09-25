@@ -31,7 +31,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: 'one imposter is Among Us! | !help',
+			name: 'for commands! | !help',
 			type: 'WATCHING',
 		}
 	})
