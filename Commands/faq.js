@@ -2,18 +2,16 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'faq',
-    coolDown: 1,
-	description: 'A command that tells faqs!',
+	aliases: ['fanquestions'],
+    description: 'Displays the server FAQ!',
+    cooldown: 2,
+    Usage: '`!faq <number>`',
+    PermLevel: `Staff`,
     async execute(client ,message, args)
     {
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
-			const Error = new Discord.MessageEmbed();
-			Error.setTitle('<:redtick:750751681175748608> ERROR!');
-			Error.setDescription('Only Staff can bring up faqs!');
-			Error.setColor(0xf53d3d);
-
-			message.channel.send(Error).then(m => m.delete({timeout: 500}));
+		
 			return;
         }
         else if(message.member.roles.cache.has('753283575276896337') && args[0] === '1')

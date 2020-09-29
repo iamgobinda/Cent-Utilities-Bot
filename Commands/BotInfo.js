@@ -1,8 +1,10 @@
 module.exports = {
     name: 'botinfo',
-    coolDown: 1,
-	description: 'A user Info command that shows the info about a user.',
-	aliases: ['bi', 'boti', 'binfo'],
+	aliases: ['bi' , 'boti'],
+    description: 'Shows the bot statistics and info!',
+    cooldown: 2,
+    Usage: '`!botinfo <question>`',
+    PermLevel: `User`,
     async execute(client , message, args) 
     {
         const Discord = require('discord.js');

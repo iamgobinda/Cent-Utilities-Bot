@@ -1,9 +1,12 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "qna",
-    description: "Ask something to staff!",
-    coolDown: 5,
+    name: 'qna',
+	aliases: ['question'],
+    description: 'Asks staff a question!',
+    cooldown: 3,
+    Usage: '`!qna <question>`',
+    PermLevel: `User`,
     async execute(client, message, args) {
         if (!args.length) {
             const Error = new Discord.MessageEmbed();

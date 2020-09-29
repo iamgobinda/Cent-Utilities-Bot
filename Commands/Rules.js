@@ -3,9 +3,11 @@ const { RuleTester } = require('eslint');
 
 module.exports = {
     name: 'rules',
-    coolDown: 1,
-	description: 'A command that tells rules !',
-    aliases: ['ro', 'rol'],
+	aliases: ['rule' , 'ruleinfo'],
+    description: 'Shows the server rules!',
+    cooldown: 2,
+    Usage: '`!rules <number>`',
+    PermLevel: `Staff`,
     async execute(client ,message, args)
     {
         if(!message.member.roles.cache.has('753283575276896337'))

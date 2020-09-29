@@ -1,13 +1,16 @@
 module.exports = {
-    name: 'dm',
-    coolDown: 2,
-	description: 'Dm\'s a user mentioned!',
+  name: 'dm',
+	aliases: ['messageuser'],
+    description: 'Messages a user mentioned!',
+    cooldown: 2,
+    Usage: '`!dm <@user (or) userid> <message>`',
+    PermLevel: `Staff`,
     
     async execute(client ,message, args)
     {
         const Discord = require('discord.js')
         if (!message.member.permissions.has("MANAGE_MESSAGES"))
-        return message.channel.send("You do not have enough permissions!");
+        return;
       let user =
         message.mentions.members.first() ||
         message.guild.members.cache.get(args[0]);

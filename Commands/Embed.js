@@ -2,9 +2,11 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'embed',
-    coolDown: 3,
-	description: 'A command that lets you make your own embeds !!',
-    aliases: ['e', 'em'],
+	aliases: ['e'],
+    description: 'Makes an embed!',
+    cooldown: 2,
+    Usage: '`!embed <#channel> <message>`',
+    PermLevel: `Staff`,
     async execute(client ,message, args)
     {
         let channel = message.mentions.channels.first();
@@ -12,12 +14,6 @@ module.exports = {
 
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
-			const Error = new Discord.MessageEmbed();
-			Error.setTitle('<:redtick:750751681175748608> ERROR!');
-			Error.setDescription('Only Staff can send embeds!');
-			Error.setColor(0xf53d3d);
-
-			message.channel.send(Error).then(m => m.delete({timeout: 500}));
 			return;
         }
         else if(message.member.roles.cache.has('753283575276896337'))
@@ -28,7 +24,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed();
                 embed.setAuthor('From ' + message.author.username , message.author.displayAvatarURL());
                 embed.setThumbnail(message.author.displayAvatarURL());
-                embed.setTitle('**📢 ANNOUCEMENT**');
+                embed.setTitle('**📢| ANNOUCEMENT**');
                 embed.setDescription(announcement);
                 embed.setColor('RANDOM');
                 embed.setTimestamp();
@@ -42,7 +38,7 @@ module.exports = {
                 Error.setDescription('Usage: `<channel> <annoucement>`');
                 Error.setColor(0xf53d3d);
     
-                message.channel.send(Error).then(m => m.delete({timeout: 500}));
+                message.channel.send(Error).then(m => m.delete({timeout: 15000}));
             }
         }
     },

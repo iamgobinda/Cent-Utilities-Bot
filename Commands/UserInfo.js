@@ -1,42 +1,33 @@
 module.exports = {
     name: 'userinfo',
-    coolDown: 2,
-    description: 'A user Info command that shows the info about a user.',
-    aliases: ['ui', 'useri', 'uinfo', 'whois'],
+	aliases: ['ui' , 'whois'],
+    description: 'Displays a user info!',
+    cooldown: 2,
+    Usage: '`!userinfo <user>`',
+    PermLevel: `User`,
     async execute(client, message, args) {
         const Discord = require('discord.js');
+        const moment = require('moment');
+        const member = message.member
 
-        let ment = message.mentions.members.first()||
-        message.guild.members.cache.get(args[0]);
-        let firstment = message.author;
+        let user = message.mentions.users.first() || message.author || message.guild.members.cache.get(args[0]);
+    const joinDiscord = moment(user.createdAt).format('llll');
+    const joinServer = moment(user.joinedAt).format('llll');
+    let embed = new Discord.MessageEmbed()
+        .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL())
+        .setDescription(`${user}`)
+        .setColor(`#32ba4b`)
+        .setThumbnail(user.displayAvatarURL())
+        .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+        .addField('Created at:', user.createdAt)
+        .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY')}`, true)
+        .addField('Status:', user.presence.status, true)
+        .setFooter(`ID: ${user.id}`)
+        .setTimestamp();
 
-        const ui = new Discord.MessageEmbed();
-        ui.setAuthor(firstment.username + '#' + firstment.discriminator, firstment.displayAvatarURL());
-        ui.setThumbnail(firstment.displayAvatarURL());
-        ui.setColor(`RANDOM`);
-        ui.addField('**Created: **', firstment.createdAt);
-        ui.addField('**Username: **', firstment.tag);
-        ui.addField('**Status: **', firstment.presence.status);
-        ui.addField('**ID: **', firstment.id);
-        ui.setTimestamp();
+    message.channel.send(embed);
+    return;
 
-        message.channel.send(ui);
 
-        if (!ment) {
-
-            return;
-        }
-
-        const userEmbed = new Discord.MessageEmbed();
-        userEmbed.setAuthor(ment.username + '#' + ment.discriminator, ment.displayAvatarURL());
-        userEmbed.setThumbnail(ment.displayAvatarURL());
-        userEmbed.setColor(`RANDOM`);
-        userEmbed.addField('**Created: **', ment.createdAt);
-        userEmbed.addField('**Username: **', ment.tag);
-        userEmbed.addField('**Status: **', ment.presence.status);
-        userEmbed.addField('**ID: **', ment.id);
-        userEmbed.setTimestamp();
-
-        message.channel.send(userEmbed);
     },
 };

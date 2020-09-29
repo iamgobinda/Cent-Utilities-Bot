@@ -1,8 +1,10 @@
 module.exports = {
 	name: 'roles',
-	cooldown: 3,
-	aliases: ['r', 'role'],
-    description: 'Rank command to display and assign ranks.',
+	aliases: ['giverole' , 'role'],
+    description: 'Gives a role to you!',
+    cooldown: 2,
+    Usage: '`!roles <role>`',
+    PermLevel: `User`,
     async execute(client ,message, args) 
     {
         const Discord = require('discord.js');

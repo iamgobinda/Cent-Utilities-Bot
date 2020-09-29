@@ -2,20 +2,17 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'poll',
-    coolDown: 3,
-	description: 'A poll command used to make polls, to be used by staff!',
-	aliases: ['po'],
+	aliases: ['choice' , 'vote'],
+    description: 'Makes a quick yes or no poll!',
+    cooldown: 2,
+    Usage: '`!poll <#channel (or) channelID> <message>`',
+    PermLevel: `Staff`,
     async execute(client , message, args) 
     {
         
         if(!message.member.roles.cache.has('753283575276896337'))
 		{
-			const Error = new Discord.MessageEmbed();
-			Error.setTitle('<:redtick:750751681175748608> ERROR!');
-			Error.setDescription('Only Staff can do polls!');
-			Error.setColor(0xf53d3d);
-
-			message.channel.send(Error);
+			
 			return;
         }
         else if(message.member.roles.cache.has('753283575276896337'))

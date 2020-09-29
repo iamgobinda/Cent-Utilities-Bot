@@ -2,18 +2,22 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'roll',
-    coolDown: 1,
-	description: 'a command that rolls the dice !',
-    aliases: ['ro', 'rol'],
+	aliases: ['randomnumber' , 'randnum'],
+    description: 'Generates a random number based off the value!',
+    cooldown: 2,
+    Usage: '`!roll <number>`',
+    PermLevel: `User`,
     async execute(client ,message, args)
     {
         let maxrange = args[0];
 
         const randomNumber = getRndInteger(1, maxrange);
         const Embed = new Discord.MessageEmbed();
-        Embed.setTitle('**YOUR ROLL IS:** ');
-        Embed.setDescription(`is... ${randomNumber}`);
-        Embed.setColor(0x2abbf5);
+        Embed.setTitle(`<:greentick:750751680613843105> You have successfully generated a number from **1 to ${args[0]}!** `);
+        Embed.setDescription(`The number is **${randomNumber}**`);
+        Embed.setColor(0x32ba4b);
+        Embed.setFooter('User ID:' + message.author.id)
+        Embed.setTimestamp();
 
         message.channel.send(Embed);
     },

@@ -1,9 +1,12 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "suggest",
-    description: "Suggest a thing!",
-    coolDown: 5,
+    name: 'suggestion',
+	aliases: ['suggest' , 'thonk'],
+    description: 'Suggests a thonk?',
+    cooldown: 2,
+    Usage: '`!suggestion <suggestion>`',
+    PermLevel: `User`,
     async execute(client, message, args) {
         if (!args.length) {
             const Error = new Discord.MessageEmbed();
@@ -27,7 +30,7 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed();
-        embed.setAuthor("<:blobcouncil:751273055082381443>│Suggestion from " + message.author.tag, message.author.avatarURL());
+        embed.setAuthor("Suggestion from " + message.author.tag, message.author.avatarURL());
         embed.setThumbnail(message.author.avatarURL());
         embed.setColor(0x2abbf5);
         embed.setDescription(args.join(" "));

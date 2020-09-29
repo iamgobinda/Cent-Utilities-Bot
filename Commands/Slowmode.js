@@ -2,9 +2,11 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'slowmode',
-    coolDown: 2,
-	description: 'sets slowmode for channels.',
-    aliases: ['s', 'sm'],
+	aliases: ['sm' , 'slow'],
+    description: 'Sets a channel slowmode!',
+    cooldown: 2,
+    Usage: '`!slowmode <number>`',
+    PermLevel: `Staff`,
     async execute(client ,message, args)
     {
         const embed = new MessageEmbed();

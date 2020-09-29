@@ -1,7 +1,13 @@
+const { User } = require("discord.js");
+
 module.exports = {
-	name: '8ball',
+    name: '8ball',
+    category: 'Fun',
 	aliases: ['ball'],
-	description: 'Fun command for the popular 8ball game!',
+    description: 'Fun command for the popular 8ball game!',
+    cooldown: 2,
+    Usage: '`!8ball <question>`',
+    PermLevel: `User`,
     async execute(client ,message, args) 
     {
         const Discord = new require('discord.js');
@@ -12,9 +18,9 @@ module.exports = {
 
             const errorball = new Discord.MessageEmbed();
             errorball.setTitle("ERROR!")
-            errorball.setDescription("You have to ask me a question so I can answer it! Go and try again boi!")
+            errorball.setDescription("You have to ask me a question so I can answer it! Go and try again dumbo!")
             errorball.setColor(0xf53d3d);
-            message.channel.send(errorball).then(m => m.delete({timeout: 500}));
+            message.channel.send(errorball).then(m => m.delete({timeout: 10500}));
 
             return;
 
@@ -22,8 +28,8 @@ module.exports = {
          }
             
             const success = new Discord.MessageEmbed();
-            success.setTitle('**<:greentick:750751680613843105> THE 8BALL HAS ANSWERED: **');
-            success.setDescription('`🎱 Answer is:` ' + `${Posiblities[randomChoice]}`);
+            success.setTitle('**<:greentick:750751680613843105> The 8ball has answered! **');
+            success.setDescription('`🎱 speaks: Answer is:` ' + `${Posiblities[randomChoice]}`);
             success.setColor(0x32ba4b);
     
             message.channel.send(success);

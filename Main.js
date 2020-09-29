@@ -24,6 +24,8 @@ for (const file of commandFiles)
 }
 //#endregion
 
+
+
 const cooldowns = new Discord.Collection();
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
@@ -37,21 +39,25 @@ client.once('ready', () => {
 	})
 	console.log('Bot Online, Running patch: ' + PatchNumber + ' and build: ' + BuildNumber);
 });
-//trigers when a user joins! haha yes
+//triggers when a user joins
 client.on('guildMemberAdd', member => {
-	const channel = member.guild.channels.cache.find(ch => ch.name === '🌀│portal');
-	if (!channel) return;
+	const channelId = '727420256917782602'
 
 	const Welcomevent = new Discord.MessageEmbed();
 	Welcomevent.setColor(`RANDOM`);
-	Welcomevent.setAuthor(message.author.tag , member.user.displayAvatarURL());
+	Welcomevent.setAuthor(member.user.tag , member.user.displayAvatarURL());
 	Welcomevent.setThumbnail(member.user.displayAvatarURL());
-	Welcomevent.setTitle('<:blobnitro:750751853473693758> Hello!');
-	Welcomevent.setDescription('Welcome bud! Make sure to go to <#747302081047691335> and verify yourself and start talking with the community! ');
+	Welcomevent.setTitle('👋| Hello!');
+	Welcomevent.setDescription('A wild user has been spotted joining the server! Make sure to go to <#747302081047691335>, verify yourself and start talking with the community!');
 	Welcomevent.setTimestamp();
 
+	const channel = member.guild.channels.cache.get(channelId)
+
 	channel.send(Welcomevent);
+
 });
+
+
 
 // Triggred when user sends a message or we can check for a specific
 // message here.
@@ -97,6 +103,7 @@ client.on('message', async message => {
 
 	timestamps.set(message.author.id, now);
 	setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
 
 	try
 	{

@@ -3,10 +3,12 @@ const Timers = new Map();
 
 
 module.exports = {
-    name: 'remindme',
-    coolDown: 3,
-	description: 'Reminds you about a certain a thing!',
-	aliases: ['reminder'],
+  name: 'remindme',
+	aliases: ['reminder' , 'timer'],
+    description: 'Sets a reminder!',
+    cooldown: 2,
+    Usage: '`!remindme <time(in s,m,h,d)>`',
+    PermLevel: `User`,
     async execute(client , message, args)
     {
 

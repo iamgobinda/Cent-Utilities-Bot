@@ -2,9 +2,12 @@ const Discord = require("discord.js");
 const { execute } = require("./poll");
 
 module.exports = {
-  name: "ping",
-  description: "Returns latency and API ping",
-  coolDown: 2,
+  name: 'ping',
+	aliases: ['latency'],
+    description: 'Shows the bot\'s ping, API latency and evaluation time!',
+    cooldown: 2,
+    Usage: '`!ping`',
+    PermLevel: `User`,
 	async execute(bot, message, args)
 	{
     message.channel.send(`🏓 Testing Ping....`).then((msg) => {

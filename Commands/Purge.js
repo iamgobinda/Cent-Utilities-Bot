@@ -1,8 +1,10 @@
 module.exports = {
     name: 'purge',
-    cooldown: 2,
-    aliases: ['p'],
-    description: 'Purge Command, that deletes sepcified messages.',
+	aliases: ['prune' , 'p' , 'clear' , 'clean'],
+    description: 'Clears an amount of messages mentioned!',
+    cooldown: 3,
+    Usage: '`!purge <amount>`',
+    PermLevel: `Staff`,
     async execute(client, message, args) {
         const Discord = require('discord.js');
 
