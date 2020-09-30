@@ -30,8 +30,8 @@ module.exports = {
 		ServerInfo.addField('**Total Channels:** ', `${message.guild.channels.cache.size}`, true);
 		ServerInfo.addField('**Total Roles:** ', `${message.guild.roles.cache.size}` , true);
 		ServerInfo.addField('**Total Emojis: **' , `${message.guild.emojis.cache.size}` , true )
-		ServerInfo.addField('**Verification Level:** ', `${message.guild.verificationLevel}`, true);
-		ServerInfo.addField('**🌠 Total Boosts:** ', `${message.guild.premiumSubscriptionCount}`, true);
+		ServerInfo.addField('**<a:verify:760771949277872158> Verification Level:** ', `${message.guild.verificationLevel}`, true);
+		ServerInfo.addField('**<:nitroboost:760770653510303745> Total Boosts:** ', `${message.guild.premiumSubscriptionCount}`, true);
 		ServerInfo.addField('**Features:**' , `${message.guild.features}`, true)
 		ServerInfo.setThumbnail(serverIcon);
 		ServerInfo.setFooter('User ID:' + message.author.id , message.author.displayAvatarURL());

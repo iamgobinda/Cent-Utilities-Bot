@@ -7,7 +7,7 @@ module.exports = {
 	aliases: ['reminder' , 'timer'],
     description: 'Sets a reminder!',
     cooldown: 2,
-    Usage: '`!remindme <time(in s,m,h,d)>`',
+    Usage: '`!remindme <time(in s,m,h,d)> <reason>`',
     PermLevel: `User`,
     async execute(client , message, args)
     {
@@ -20,7 +20,7 @@ module.exports = {
             noamount.setTitle("<:redtick:750751681175748608> ERROR!")
             noamount.setDescription("You did not specify the amount of time you wish to set a timer for! Usage - `!remindme <time[in s,m,h,d]>`")
             noamount.setColor(0xf53d3d)
-            return message.channel.send(noamount).then(m => m.delete({timeout: 500}));
+            return message.channel.send(noamount).then(m => m.delete({timeout: 11500}));
           }
           if (!args[0].endsWith("d")) {
             if (!args[0].endsWith("h")) {
@@ -30,7 +30,7 @@ module.exports = {
             timeamount.setTitle("<:redtick:750751681175748608> ERROR!")
             timeamount.setDescription("You did not use the proper format for the the time!")
             timeamount.setColor(0xf53d3d)
-            return message.channel.send(timeamount).then(m => m.delete({timeout: 500}));
+            return message.channel.send(timeamount).then(m => m.delete({timeout: 11500}));
                 
               }
             }
@@ -43,6 +43,9 @@ module.exports = {
             timeamount.setColor(0xf53d3d)
             return message.channel.send(timeerror);
           }
+    
+        
+
           Timers.set(message.author.id + " G " + message.guild.name, {
             Guild: message.guild.name,
             Author: {
@@ -53,7 +56,7 @@ module.exports = {
           });
           const remindsuccess = new Discord.MessageEmbed();
           remindsuccess.setTitle("<:greentick:750751680613843105> SUCCESS!")
-          remindsuccess.setDescription(`${message.author.tag} you have set a timer for ${args[0]}. A reminder will be send to your DM!`)
+          remindsuccess.setDescription(`${message.author.tag} you have set a timer for ${args[0]} and reason: ${args[1]} A reminder will be send to your DM!`)
           remindsuccess.setColor(0x32ba4b)
           message.channel.send(remindsuccess);
           
@@ -61,8 +64,8 @@ module.exports = {
             let Embed = new Discord.MessageEmbed()
             Embed.setThumbnail('https://cdn.discordapp.com/attachments/756000439350198294/758605927888453662/kisspng-youtube-lg-watch-urbane-watchtime-timer-cartoon-5adbd2cad3c935.3925048215243557868675-remove.png')
               Embed.setTitle(`⏲️ Timer finished in guild ${message.guild.name}..`)
-              Embed.setDescription(`Your timer for ${args[0]} has finished!`)
-              Embed.setColor(0x32ba4b);
+              Embed.setDescription(`Your timer for ${args[0]} has finished! \n Reason: ${args[1]}`)
+              Embed.setColor('RANDOM');
             message.author.send(Embed);
             Timers.delete(message.author.id + " G " + message.guild.name);
           }, ms(args[0]));
