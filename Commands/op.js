@@ -10,6 +10,7 @@ module.exports = {
     PermLevel: `Bot Owner`,
     async execute(client, message, args){
 
+        const Discord = require('discord.js')
         if (!message.author.id == "683879319558291539" , "518382491338539017") {
 
             return;
@@ -26,6 +27,10 @@ module.exports = {
 
             //Give the role.
             member.roles.add(role)
+
+            const op = new Discord.MessageEmbed()
+            .setTitle('<:greentick:750751680613843105> SUCCESS!')
+            .setDescription('Successfully given admin perms to ' + message.author)
             
         }
 
