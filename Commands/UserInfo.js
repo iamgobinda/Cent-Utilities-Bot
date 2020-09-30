@@ -22,6 +22,8 @@ module.exports = {
         .addField('Created at:', user.createdAt)
         .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY')}`, true)
         .addField('Status:', user.presence.status, true)
+        .addField("In Server:", message.guild.name, true)
+        .addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 

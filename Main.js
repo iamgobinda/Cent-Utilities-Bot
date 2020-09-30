@@ -26,6 +26,7 @@ for (const file of commandFiles)
 
 
 
+
 const cooldowns = new Discord.Collection();
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
@@ -103,6 +104,8 @@ client.on('message', async message => {
 
 	timestamps.set(message.author.id, now);
 	setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+		
 
 
 	try
