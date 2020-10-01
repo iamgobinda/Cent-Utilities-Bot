@@ -23,7 +23,7 @@ module.exports = {
             let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
             const Botinfo = new Discord.MessageEmbed();
-            Botinfo.setTitle('**<:greentick:750751680613843105>Bot Info:** ');
+            Botinfo.setTitle('*Bot Info:** ');
             Botinfo.addField('**Creator:**', 'YT GAMEWORKS', false);
             Botinfo.addField('**Users:** ', `**${message.guild.memberCount}**`, true);
             Botinfo.addField('**Channels:** ', `**${message.guild.channels.cache.size}**`, true);

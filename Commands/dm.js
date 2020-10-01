@@ -28,7 +28,11 @@ module.exports = {
       dm.setTitle('DM FROM STAFF!')
       dm.setDescription(args.slice(1).join(" "))
       dm.setTimestamp();
-      user.send(dm).then(() => message.channel.send(`Sent a message to ${user.user.tag}`));
+      const success = new Discord.MessageEmbed()
+      .setDescription(`<:greentick:750751680613843105> Successfully sent a message to ${user.user}!`)
+      .setTimestamp()
+      .setColor('GREEN')
+      user.send(dm).then(() => message.channel.send(success));
 
         
 

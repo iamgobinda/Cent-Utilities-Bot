@@ -24,8 +24,7 @@ module.exports = {
 
 		if (!command) {
             const errormsg = new Discord.MessageEmbed();
-            errormsg.setTitle('<:redtick:750751681175748608> Error!')
-            errormsg.setDescription(`There is no command with name or alias \`${commandName}\`, ${message.author}!`)
+            errormsg.setDescription(`<:redtick:750751681175748608> There is no command with name or alias \`${commandName}\`, ${message.author}!`)
             errormsg.setColor(0xf53d3d)
             errormsg.setTimestamp();
 			return message.channel.send(errormsg);
@@ -37,16 +36,14 @@ module.exports = {
 			const newCommand = require(`./${command.name}.js`);
             message.client.commands.set(newCommand.name, newCommand);
             const reloaded = new Discord.MessageEmbed()
-            .setTitle('<:greentick:750751680613843105> Success!')
-            .setDescription(`Command \`${command.name}\` was successfully reloaded without any errors!`)
+            .setDescription(`<:greentick:750751680613843105> Command \`${command.name}\` was successfully reloaded without any errors!`)
             .setColor(0x32ba4b)
             .setTimestamp();
 			message.channel.send(reloaded);
 		} catch (error) {
             console.error(error);
             const newerror = new Discord.MessageEmbed()
-            .setTitle('<:redtick:750751681175748608> Error!')
-            .setDescription(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``)
+            .setDescription(`<:redtick:750751681175748608> There was an error while reloading a command \`${command.name}\`:\nError for reference: \`${error.message}\``)
             .setColor(0xf53d3d)
             .setTimestamp();
 			message.channel.send(newerror);

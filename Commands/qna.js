@@ -23,7 +23,7 @@ module.exports = {
         if (!channel) {
             const Error = new Discord.MessageEmbed();
             Error.setTitle('<:redtick:750751681175748608> Error!');
-            Error.setDescription('There is no channel with name - suggestions');
+            Error.setDescription('There is no channel with name - staff chat!');
             Error.setColor(0xf53d3d);
 
             return message.channel.send(Error);

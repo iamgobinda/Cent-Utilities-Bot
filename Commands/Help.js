@@ -20,16 +20,14 @@ if (!args.length) {
   .setColor('GREEN')
   .setThumbnail('https://images-ext-2.discordapp.net/external/8VesveSQuqiYmXDWC4DVg1Jc89a9IfXCvuBvCuJzE4E/%3Fwidth%3D475%26height%3D475/https/media.discordapp.net/attachments/748792278474031124/753925799140392971/CA_1.png')
   .setTitle('❓| HELP MENU')
-  .setDescription('For more information on a command type `!help <commandname>` \n\n **Information** \n `userinfo` `serverinfo` `botinfo` `avatar` `rules` `faq` \n\n **Moderation** \n `purge` `lockchannel` `slowmode` `dm` `kick` \n\n **Miscellaneous** \n `poll` `invite` `embed` `suggestion` `8ball` `roll` `roles` `qna` \n\n **System** \n `ping` `kill` `log` `reload` `op`')
+  .setDescription('For more information on a command type `!help <commandname>` \n\n **Information** \n `userinfo` ,`serverinfo` ,`botinfo` ,`avatar` ,`rules` ,`faq` \n\n **Moderation** \n `purge` ,`lockchannel` ,`slowmode` ,`dm` ,`kick` \n\n **Miscellaneous** \n `poll` ,`invite` ,`embed` ,`suggestion` ,`8ball` ,`roll` ,`roles` ,`qna` \n\n **System** \n `ping` ,`kill` ,`log` ,`reload` ,`op`')
   .setFooter("User ID: " + message.author.id)
   .setTimestamp()
     
 
-return message.channel.send(helpmenu)
-	
+  message.channel.send(helpmenu).then(m => m.react(':greentick:750751680613843105'))
     
-    
-}
+  }
 
 const name = args[0].toLowerCase();
 const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
@@ -38,8 +36,7 @@ const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.
 if (!command) {
   const nocmd = new Discord.MessageEmbed()
   .setColor('RED')
-  .setTitle('Error!')
-  .setDescription('That\'s not a valid command!')
+  .setDescription('<:redtick:750751681175748608> That\'s not a valid command!')
   .setTimestamp();
 	return message.reply(nocmd);
 }
@@ -53,7 +50,7 @@ hmenu.setThumbnail('https://images-ext-2.discordapp.net/external/8VesveSQuqiYmXD
 hmenu.setColor('GREEN')
 hmenu.setTitle('❓| HELP MENU')
 hmenu.setDescription(data)
-hmenu.setFooter(`User ID: ` + message.author.id)
+hmenu.setFooter(`User ID: ` + message.author.id , message.author.displayAvatarURL())
 hmenu.setTimestamp()
 
 message.channel.send(hmenu);

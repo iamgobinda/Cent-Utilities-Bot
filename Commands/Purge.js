@@ -12,28 +12,23 @@ module.exports = {
 
         if (!message.member.roles.cache.has('753283575276896337')) 
         {
-            const Error = new Discord.MessageEmbed();
-            Error.setTitle('<:redtick:750751681175748608> ERROR!');
-            Error.setDescription('Only Staff can purge!');
-            Error.setColor(0xf53d3d);
-
-            message.channel.send(Error).then(m => m.delete({timeout: 500}));
+        
             return;
         }
 
         if (isNaN(amount)) 
         {
             const NotAValidNumber = new Discord.MessageEmbed();
-            NotAValidNumber.setTitle('**<:redtick:750751681175748608> Not a valid number!**');
-            NotAValidNumber.setDescription('That doesn\'t seem to be a valid number.');
+            NotAValidNumber.setTitle('**Not a valid number!**');
+            NotAValidNumber.setDescription('<:redtick:750751681175748608> That doesn\'t seem to be a valid number.');
             NotAValidNumber.setColor(0xf53d3d)
 
             return message.reply(NotAValidNumber).then(m => m.delete({timeout: 500}));
         } else if (amount <= 1 || amount > 100) 
         {
             const TooManySelected = new Discord.MessageEmbed();
-            TooManySelected.setTitle('**<:redtick:750751681175748608> Too many messages selected!**');
-            TooManySelected.setDescription('You can only input a number between 1 and 99.');
+            TooManySelected.setTitle('**Too many messages selected!**');
+            TooManySelected.setDescription('<:redtick:750751681175748608> You can only input a number between 1 and 99.');
             TooManySelected.setColor(0xf53d3d);
 
             return message.reply(TooManySelected).then(m => m.delete({timeout: 500}));
@@ -48,14 +43,7 @@ module.exports = {
             console.error(err);
             message.channel.send(UnkownError);
         });
-        var AmountOfMessagesDeleted = amount - 1;
-
-        const Success = new Discord.MessageEmbed();
-        Success.setTitle('**<:greentick:750751680613843105> SUCCESS!**');
-        Success.setDescription('Deleted ' + AmountOfMessagesDeleted + " messages! You can now delete this message!");
-        Success.setColor(0x32ba4b);
-
-        message.channel.send(Success).then(m => m.delete({timeout: 500}));
+    message.react(':greentick:750751680613843105')
 
     },
 };

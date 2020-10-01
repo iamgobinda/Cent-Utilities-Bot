@@ -13,12 +13,7 @@ module.exports = {
         {
             return;
         }
-        else if(args[0] === 'kill' && message.member.roles.cache.has('748515939821158443'))
-        {
-            message.reply("Resetting...");
-            client.destroy();
-            client.login(process.env.token);
-        }
+        
         else if(args[0] === 'Log' && message.member.roles.cache.has('748515939821158443'))
         {
             try

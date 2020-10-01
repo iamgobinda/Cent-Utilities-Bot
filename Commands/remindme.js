@@ -17,8 +17,8 @@ module.exports = {
 
         if (!args[0]) {
             const noamount = new Discord.MessageEmbed();
-            noamount.setTitle("<:redtick:750751681175748608> ERROR!")
-            noamount.setDescription("You did not specify the amount of time you wish to set a timer for! Usage - `!remindme <time[in s,m,h,d]>`")
+            noamount.setTitle("Invalid Syntax")
+            noamount.setDescription("<:redtick:750751681175748608> Usage: `!remindme <time{in s,m,h,d}> <reason>`")
             noamount.setColor(0xf53d3d)
             return message.channel.send(noamount).then(m => m.delete({timeout: 11500}));
           }
@@ -27,8 +27,8 @@ module.exports = {
               if (!args[0].endsWith("m")) {
                 if (!args[0].endsWith("s")) {
                     const timeamount = new Discord.MessageEmbed();
-            timeamount.setTitle("<:redtick:750751681175748608> ERROR!")
-            timeamount.setDescription("You did not use the proper format for the the time!")
+            timeamount.setTitle("Invalid syntax")
+            timeamount.setDescription("<:redtick:750751681175748608> Usage: `!remindme <time{in s,m,h,d}> <reason>`")
             timeamount.setColor(0xf53d3d)
             return message.channel.send(timeamount).then(m => m.delete({timeout: 11500}));
                 
@@ -38,11 +38,17 @@ module.exports = {
         }
           if (isNaN(args[0][0])) {
             const timeerror = new Discord.MessageEmbed();
-            timeamount.setTitle("<:redtick:750751681175748608> ERROR!")
-            timeamount.setDescription("That is not a number!")
+            timeamount.setTitle("Invalid syntax")
+            timeamount.setDescription("<:redtick:750751681175748608> Usage: `!remindme <time{in s,m,h,d}> <reason>`")
             timeamount.setColor(0xf53d3d)
             return message.channel.send(timeerror);
           }
+          if (!args.slice(1).join(" ")){
+          const reason = new Discord.MessageEmbed()
+          .setTitle('Invalid Syntax!')
+          .setDescription('<:redtick:750751681175748608> Usage: `!remindme <time{in s,m,h,d}> <reason>`')
+          .setColor('RED')
+        return message.channel.send(reason);}
     
         
 
@@ -55,16 +61,16 @@ module.exports = {
             Time: ms(args[0]),
           });
           const remindsuccess = new Discord.MessageEmbed();
-          remindsuccess.setTitle("<:greentick:750751680613843105> SUCCESS!")
-          remindsuccess.setDescription(`${message.author.tag} you have set a timer for ${args[0]} and reason: ${args[1]} A reminder will be send to your DM!`)
-          remindsuccess.setColor(0x32ba4b)
+          remindsuccess.setTitle("SUCCESS!")
+          remindsuccess.setDescription(`<:greentick:750751680613843105> ${message.author} Your reminder will go off in ${args[0]}`)
+          remindsuccess.setColor('GREEN')
           message.channel.send(remindsuccess);
           
           setTimeout(() => {
             let Embed = new Discord.MessageEmbed()
             Embed.setThumbnail('https://cdn.discordapp.com/attachments/756000439350198294/758605927888453662/kisspng-youtube-lg-watch-urbane-watchtime-timer-cartoon-5adbd2cad3c935.3925048215243557868675-remove.png')
               Embed.setTitle(`⏲️ Timer finished in guild ${message.guild.name}..`)
-              Embed.setDescription(`Your timer for ${args[0]} has finished! \n Reason: ${args[1]}`)
+              Embed.setDescription(`Your timer for ${args[0]} has finished! \n Reason: ${args.slice(1).join(" ")}`)
               Embed.setColor('RANDOM');
             message.author.send(Embed);
             Timers.delete(message.author.id + " G " + message.guild.name);
